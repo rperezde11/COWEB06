@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>eFlights</title>
+        <meta name="description" content="Book Flights, save money traveling.">
+        <meta name="author" content="Raul Perez">
+        <meta name="keywords" content="Flights,cheap,travel,enjoy,fast,easy,bargain">
+        <link rel="stylesheet"  type="text/css" href="css/main.css">
+        <link rel="stylesheet"  type="text/css" href="css/index.css">
+    </head>
+    
+    <body id="bod">
+        
+        <div id="header">
+
+            <div id="whole-logo">
+                <img id="logo" src="imgs/logo.png"></img>
+            </div>
+            
+            <div id="header-profile">
+                <a href="register.html">
+                    <img id="img-avatar" src="imgs/avatar.png"></img>
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="dark-hr"></div>
+        
+        <div id="header-options">
+	  <ul>
+	    <li><a href="index.html"><div class="h-nav-element">Book a flight</div></a></li>
+	    <li><a href="index.html"><div class="h-nav-element">Change a booked flight</div></a></li>
+	    <li><a href="index.html"><div class="h-nav-element">Flight calendar</div></a></li>
+	    <li><a href="index.html"><div class="h-nav-element">Contact us</div></a></li>
+	  </ul>
+        </div>
+        
+        <div id="offer">
+            <img id="img-offer" src="imgs/rome.jpg"></img>
+        </div>
+    
+        <div id="index-content">
+            
+            <div id="dummy-selector">
+                
+                <h2 class="section-header">Select your flight</h2>
+
+                <br/>
+
+                <div id="flight-selector">
+
+                    <form id="selection" name="flight-selection" action="index.html">
+
+                        <div class="selection-node">
+                            <h3 class="insection-header">Departure</h3>
+                            <p class="descr-header">City</p>
+                            <input class="general-input" placeholder="BCN..." type="text" required="required" name="departure">
+                            <p class="descr-header">Date</p>
+                            <input class="general-input" type="date" required="required" name="departure-date">
+                        </div>
+
+                        <br/><br/>
+
+                        <div class="selection-node">
+                            <h3 class="insection-header">Arrival</h3>
+                            <p class="descr-header">City</p>
+                            <input class="general-input" placeholder="Berlin..." type="text" required="required" name="arrival">
+                            <p class="descr-header">Date</p>
+                            <input class="general-input" type="date" required="required" name="arrival-date">
+                        </div>
+
+                        <br/><br/>
+
+                        <input class="dark-submit" type="submit" name="ask" value="GO!">
+                    </form>
+
+                </div>
+                
+            </div>
+        
+            <div id="container">
+
+                <table id="table-content">
+                    <tr>
+                        <th class="light-table-header">Date</th>
+                        <th class="light-table-header">Departure</th>
+                        <th class="light-table-header">Departure Time</th>
+                        <th class="light-table-header">Arrival</th>
+                        <th class="light-table-header">Arrival Time</th>
+                        <th class="light-table-header">Duration</th>
+                        <th class="light-table-header">Price</th>
+                    </tr>
+                    <tr class="light-table-row">
+                        <td>12-09-2016</td>
+                        <td>BCN</td>
+                        <td>19:00</td>
+                        <td>Berlin</td>
+                        <td>20:00</td>
+                        <td>1:00 hour</td>
+                        <td>28$</td>
+                    </tr>
+                    <tr class="light-table-row">
+                        <td>12-09-2016</td>
+                        <td>BCN</td>
+                        <td>19:00</td>
+                        <td>Berlin</td>
+                        <td>20:00</td>
+                        <td>1:00 hour</td>
+                        <td>28$</td>
+                    </tr>
+                    <tr class="light-table-row">
+                        <td>12-09-2016</td>
+                        <td>BCN</td>
+                        <td>19:00</td>
+                        <td>Berlin</td>
+                        <td>20:00</td>
+                        <td>1:00 hour</td>
+                        <td>28$</td>
+                    </tr>
+                    <tr class="light-table-row">
+                        <td>12-09-2016</td>
+                        <td>BCN</td>
+                        <td>19:00</td>
+                        <td>Berlin</td>
+                        <td>20:00</td>
+                        <td>1:00 hour</td>
+                        <td>28$</td>
+                    </tr>
+                    <tr class="light-table-row">
+                        <td>12-09-2016</td>
+                        <td>BCN</td>
+                        <td>19:00</td>
+                        <td>Berlin</td>
+                        <td>20:00</td>
+                        <td>1:00 hour</td>
+                        <td>28$</td>
+                    </tr>   
+                </table>
+
+            </div>
+        </div>
+        
+        <div id="footer"></div>
+    
+    </body>
+    
+</html>

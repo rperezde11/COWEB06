@@ -1,0 +1,73 @@
+#reg-body {
+    
+    margin: 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+#img-reg {
+    
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    
+}
+
+#reg-container {
+    
+    width: 25%;
+    height: 1400px;
+    background: white;
+    padding: 1% 5%;
+    margin-left: 5%;
+    min-width: 500px;
+    
+}
+
+.input-section {
+    
+    width: 90%;
+    margin-left: 10%;
+    
+}
+
+.input-container {
+    
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.light-shadow {
+    
+    box-shadow: 0px 0px 12px 2px #7777ff; 
+    
+}
+
+p.light-field-header {
+    
+    margin-bottom: 6px;
+    color: #002;
+    
+}
+
+h2,h3.light-section-header {
+    
+    color: #006;
+    
+}
+
+h1.light-main-title {
+    
+    color: #000066;
+    
+}
+
+input[type="radio"] {
+    
+    width: 15px;
+    display: inline;
+    
+}
+
+

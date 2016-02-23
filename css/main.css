@@ -1,0 +1,320 @@
+#bod {
+    
+    margin: 0;
+    background: #141f71;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+div#header {
+    
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background: #1a1a59;
+    display: block;
+    
+}
+
+div#header-options {
+    
+    width: 100%;
+    height: 25px;
+    display: block;
+    background: #1a1a59;
+    line-height: 25px;
+    
+}
+
+div ul li {
+  
+    list-style-type: none;
+    width: 25%;
+    display: inline;
+    float: left;
+    margin: 0 auto;
+  
+}
+
+div ul li a div.h-nav-element {
+  
+    text-align: center;
+    font-style: bold;
+    border-radius: 6px;
+    box-shadow: 0px 0px 15px 12px #005 inset;
+    margin: 0 auto;
+  
+}
+
+div ul li a div.h-nav-element:after {
+ 
+    content: url('../imgs/down.png');
+  
+}
+
+div ul li a div.left-element {}
+
+div ul li a div.right-element {}
+
+div#header-options ul {
+  
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+div#footer {
+    
+    background: #0f0f0f;
+    width: 100%;
+    height: 80px;
+    display: block;
+    float: right;
+}
+
+#img-avatar {
+    
+   float: right;
+    
+}
+
+div#whole-logo {
+    
+    width: 240px;
+    height: 60px;
+    position: absolute;
+    left: 3%;
+    top: 60%;
+    transform: translateY(-50%);
+    
+}
+
+img#logo {
+    
+    width: 90%;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 2%;
+    
+}
+
+div#header-profile {
+    
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+input.general-input{
+    
+    width: 85%;
+    height: 30px;
+    
+}
+
+
+form#selection p.descr-header{
+    
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    margin-bottom: 2px;
+    color: azure;
+    
+}
+
+table {
+    
+    margin: 0px auto;
+    text-align: center;
+    
+}
+
+
+td {
+    
+    border-bottom: 1px solid grey;   
+    
+}
+
+.light-table-header {
+    
+    background: #888888;
+    box-shadow: 0px 0px 15px 3px #888 inset;
+    border-radius: 15px;
+    
+}
+
+.light-table-row {
+    
+    height: 60px;
+    
+}
+
+/*  RULES  */
+
+div.light-hr {
+  
+  margin: 0 auto;
+  box-shadow: 0px 0px 3px 12px #55f;
+  border-radius: 30px;
+  background: #006;
+  height: 1px;
+  width: 90%;
+  
+}
+
+hr.dark-hr {
+ 
+  margin: 0 auto;
+  box-shadow: 0px 0px 1px 12px #1a1a59;
+  border-radius: 30px;
+  background: white;
+  height: 1px;
+  width: 90%;
+  
+}
+
+/* HEADERS */
+
+h2.section-header{
+    
+    text-align: center;
+    color: yellow;
+    background: transparent;
+    background: -webkit-radial-gradient(#000060 1%, transparent 75%); /* For Safari 5.1 to 6.0 */
+    background: -o-rradial-gradient(#000060 1%, transparent 75%); /* For Opera 11.1 to 12.0 */
+    background: -moz-radial-gradient(#000060 1%, transparent 75%); /* For Firefox 3.6 to 15 */
+    background: linear-radial-gradient(#000060 1%, transparent 75%); /* Standard syntax */
+}
+
+h1,h2,h3,h4,h5,h6.insection-header{
+    
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-style: normal;
+    color: yellow;
+    
+}
+
+
+/* LINKS */
+
+a {
+    
+    color: azure;
+    text-decoration: none;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    
+}
+
+a:hover {
+ 
+    color: #222;
+    
+}
+
+a:visited {
+ 
+    color: #aaa;
+    
+}
+
+/*****************************************************
+*   INPUTs
+******************************************************/
+
+input[type="date"],
+input[type="number"],
+input[type="text"]
+{
+    
+    border-radius: 4px;
+    border: black solid 2px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 15px;
+    padding-left: 10px;
+    
+}
+
+input[type="submit"].light-submit{
+    
+    width: 100%;
+    height: 50px;
+    font-size: 35px;
+    text-shadow: 1px 1px 2px black;
+    font-style: normal;
+    font-weight: bold;
+    color: aliceblue;
+    border: 1px solid #005500;
+    box-shadow: 0px 0px 15px 1px #222;
+    background: #50b33c;
+    
+}
+
+input[type="submit"].dark-submit{
+    
+    width: 90%;
+    height: 50px;
+    font-size: 35px;
+    text-shadow: 1px 1px 2px black;
+    font-style: normal;
+    font-weight: bold;
+    color: aliceblue;
+    border: 1px solid #005500;
+    box-shadow: 0px 0px 15px 1px #222;
+    background: #50b33c;
+    
+}
+
+
+
+/*****************************************************
+ *  Placeholders for browsers
+ *****************************************************/
+
+::-webkit-input-placeholder{
+    font-style: italic;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+:-moz-placeholder{
+    font-style: italic;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+::-moz-placeholder{
+    font-style: italic;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+:placeholder-shown{
+    font-style: italic;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/*****************************************************
+ *  Scrollbar
+ *****************************************************/
+
+::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #e20;
+    border: 1px solid #f42;
+    box-shadow: 0px 0px 8px 6px #f63 inset;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #fb6;
+    box-shadow: 0px 0px 8px 6px #fd8 inset;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #fc7;
+    box-shadow: 0px 0px 15px 1px #fd8 inset;
+}
