@@ -22,7 +22,7 @@ div#header-options {
     height: 25px;
     display: block;
     background: #1a1a59;
-    line-height: 25px;
+	line-height: 25px;
     
 }
 
@@ -34,6 +34,13 @@ div ul li {
     float: left;
     margin: 0 auto;
   
+}
+
+div ul.nav-hor-options {
+	
+	width: 100%;
+	display: block;
+	
 }
 
 div ul li a div.h-nav-element {

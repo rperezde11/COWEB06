@@ -17,12 +17,12 @@
         <div id="header">
 
             <div id="whole-logo">
-                <img id="logo" src="imgs/logo.png"></img>
+                <img id="logo" alt="Page Logo"  src="imgs/logo.png"></img>
             </div>
             
             <div id="header-profile">
                 <a href="register.html">
-                    <img id="img-avatar" src="imgs/avatar.png"></img>
+                    <img id="img-avatar" alt="Avatar image"  src="imgs/avatar.png"></img>
                 </a>
             </div>
 
@@ -49,7 +49,7 @@
             
             <hr/><br/>
             
-             <form name="registration" action="register.html" method="post">
+             <form name="registration" action="profile.php" method="post">
             
                 <div class="input-section">
 
@@ -59,7 +59,8 @@
 
                         <p class="light-field-header">First Name</p>
                         <input class="general-input light-shadow" placeholder="Bryan" type="text" required="required" name="FirstName">
-                        <p class="light-field-header">Second Name</p>
+                        <!--
+						<p class="light-field-header">Second Name</p>
                         <input class="general-input light-shadow" placeholder="Johnson" type="text" required="required" name="SecondName">
                         <p class="light-field-header">Alias</p>
                         <input class="general-input light-shadow" placeholder="Insert Alias here..." type="text" required="required" name="Alias">
@@ -67,18 +68,19 @@
                         <input class="general-input light-shadow" placeholder="example@domain.foo" type="text" required="required" name="Email">
                         <p class="light-field-header">Date of Birth</p>
                         <input class="general-input light-shadow" type="date" required="required" name="Birth">
+						-->
                         <p class="light-field-header">Gender</p>
-                        <input class="general-input" type="radio" name="Gender" value="Male" checked >
+						<input class="general-input" type="radio" name="Gender" value="Male" checked >
                         <label for="Male">Male</label>
                         <input class="general-input" type="radio" name="Gender" value="Female"  >
                         <label for="Female">Female</label>
-
+	
                     </div>
 
                 </div>
 
                 <br/><br/>
-
+				<!--
                 <div class="input-section">
 
                     <h2>Location</h2>
@@ -117,6 +119,7 @@
                     </div>
 
                 </div>
+				-->
             
                 <br/><br/><br/>
                 
