@@ -4,145 +4,231 @@
     
     <head>
         <title>eFlights</title>
-        <meta name="description" content="Book Flights, save money traveling.">
-        <meta name="author" content="Raul Perez">
-        <meta name="keywords" content="Flights,cheap,travel,enjoy,fast,easy,bargain">
-        <link rel="stylesheet"  type="text/css" href="css/main.css">
-        <link rel="stylesheet"  type="text/css" href="css/index.css">
+        <meta name="author" content="krakosky">
+        <meta name="description" content="Where flights are born">
+        <meta name="keywords" content="cheap, flights, flight, non-expensive, 
+                                       travel, enjoy, good, fine, wonderful,
+                                       great, Rome, New York, Paris, London ">
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/index.css" media="screen">
     </head>
     
-    <body id="bod">
+    <body>
         
         <div id="header">
-
-            <div id="whole-logo">
-                <img id="logo" alt="Page Logo" src="imgs/logo.png"></img>
-            </div>
             
-            <div id="header-profile">
-                <a href="register.html">
-                    <img id="img-avatar" alt="Profile image" src="imgs/avatar.png"></img>
+            <div id="header-logo">
+                <a href="#">
+                    <img src="imgs/logo.png" alt="Logo of the website." >
                 </a>
             </div>
-
-        </div>
-        
-        <div id="header-options">
-		  <ul class="nav-hor-options">
-			<li><a href="index.html"><div class="h-nav-element">Book a flight</div></a></li>
-			<li><a href="index.html"><div class="h-nav-element">Change a booked flight</div></a></li>
-			<li><a href="index.html"><div class="h-nav-element">Flight calendar</div></a></li>
-			<li><a href="index.html"><div class="h-nav-element">Contact us</div></a></li>
-		  </ul>
-        </div>
-        
-        <div id="offer">
-            <img id="img-offer" alt="Picture of Rome" src="imgs/rome.jpg"></img>
-        </div>
-    
-        <div id="index-content">
             
-            <div id="dummy-selector">
-                
-                <h2 class="section-header">Select your flight</h2>
-
-                <br/>
-
-                <div id="flight-selector">
-
-                    <form id="selection" name="flight-selection" action="result.php" method="get">
-
-                        <div class="selection-node">
-                            <h3 class="insection-header">Departure</h3>
-                            <p class="descr-header">City</p>
-                            <input class="general-input" placeholder="BCN..." type="text" required="required" name="departure">
-                            <p class="descr-header">Date</p>
-                            <input class="general-input" type="date" required="required" name="departure-date">
-                        </div>
-
-                        <br/><br/>
-
-                        <div class="selection-node">
-                            <h3 class="insection-header">Arrival</h3>
-                            <p class="descr-header">City</p>
-                            <input class="general-input" placeholder="Berlin..." type="text" required="required" name="arrival">
-                            <p class="descr-header">Date</p>
-                            <input class="general-input" type="date" required="required" name="arrival-date">
-                        </div>
-
-                        <br/><br/>
-
-                        <input class="dark-submit" type="submit" name="ask" value="GO!">
-                    </form>
-
+            <div id="header-prof">
+                <a href="#">
+                    <img class="profile-pic" src="imgs/avatar.png">
+                </a>
+                <a href="#">
+                    <div class="prof-info">Register</div>
+                </a>
+            </div>
+            
+            <div id="header-nav">
+                <ul>
+                    <li><a href="#"><div class="hnav-elem">Book a flight <span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Modify your booking <span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Book a flight <span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Contact Us <span class="hnav-image"></span></div></a></li><!--
+                    -->
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div id="content">
+            <div id="prom-wrapper">
+                <div id="prom">
+                    <img src="imgs/rome.jpg" alt="Image of a place in the world.">
                 </div>
+            </div>
+            
+            <div id="flight-chooser">
+                
+                <h2 class="section-header-dark">Select your flight!</h2>
+                
+                <form action="#" method="get">
+                    
+                    <div class="selection-node"> 
+                        <h4 class="insection-header-dark">Departure</h4>
+                        <p class="field-header-dark">City</p>
+                        <input class="general-input" type="text" placeholder="BCN..." name="departure-city">
+                        <p class="field-header-dark">Date</p>
+                        <input class="general-input" type="date" name="departure-date">
+                    </div>
+                    
+                    <br/><br/>
+                    
+                    <div class="selection-node"> 
+                        <h4 class="insection-header-dark">Arrival</h4>
+                        <p class="field-header-dark">City</p>
+                        <input class="general-input" type="text" placeholder="Moscow..." name="arrival-city">
+                        <p class="field-header-dark">Date</p>
+                        <input class="general-input" type="date" name="arrival-date">
+                        
+                        <br/><br/><br/><br/>
+                        
+                        <input class="dark-submit" type="submit" value="submit">
+                        
+                    </div>
+                
+                </form>
                 
             </div>
         
-            <div id="container">
-
-                <table id="table-content">
+            <div id="content-offers">
+                <h2 class="section-header-light">Offers you may like...</h2>
+                
+                <table class="flights-table">
+                    <caption class="capt-light">Barcelona - Moscow</caption>
                     <tr>
-                        <th class="light-table-header">Date</th>
-                        <th class="light-table-header">Departure</th>
-                        <th class="light-table-header">Departure Time</th>
-                        <th class="light-table-header">Arrival</th>
-                        <th class="light-table-header">Arrival Time</th>
-                        <th class="light-table-header">Duration</th>
-                        <th class="light-table-header">Price</th>
+                        <th>Departure</th>
+                        <th>Time</th>
+                        <th>Arrival</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>Price</th>
                     </tr>
-                    <tr class="light-table-row">
-                        <td>12-09-2016</td>
-                        <td>BCN</td>
+                    <tr>
+                        <td>Barcelona (B)</td>
                         <td>19:00</td>
-                        <td>Berlin</td>
-                        <td>20:00</td>
-                        <td>1:00 hour</td>
-                        <td>28$</td>
+                        <td>London (Gatw)</td>
+                        <td>21:00</td>
+                        <td>2 hours</td>
+                        <td>34$</td>
                     </tr>
-                    <tr class="light-table-row">
-                        <td>12-09-2016</td>
-                        <td>BCN</td>
-                        <td>19:00</td>
-                        <td>Berlin</td>
-                        <td>20:00</td>
-                        <td>1:00 hour</td>
-                        <td>28$</td>
+                    <tr>
+                        <td>London (Gatw)</td>
+                        <td>22:00</td>
+                        <td>Berlin (Ausch)</td>
+                        <td>00:00</td>
+                        <td>2 hours</td>
+                        <td>64$</td>
                     </tr>
-                    <tr class="light-table-row">
-                        <td>12-09-2016</td>
-                        <td>BCN</td>
-                        <td>19:00</td>
-                        <td>Berlin</td>
-                        <td>20:00</td>
-                        <td>1:00 hour</td>
-                        <td>28$</td>
+                    <tr>
+                        <td>Berlin (Ausch)</td>
+                        <td>00:00</td>
+                        <td>Moscow (Pl)</td>
+                        <td>3:30</td>
+                        <td>3:30 hours</td>
+                        <td>34$</td>
                     </tr>
-                    <tr class="light-table-row">
-                        <td>12-09-2016</td>
-                        <td>BCN</td>
-                        <td>19:00</td>
-                        <td>Berlin</td>
-                        <td>20:00</td>
-                        <td>1:00 hour</td>
-                        <td>28$</td>
+                    <tr>
+                        <td colspan="4"><b>Total</b></td>
+                        <td><b>7:30 hours</b></td>
+                        <td><b>132$</b></td>
                     </tr>
-                    <tr class="light-table-row">
-                        <td>12-09-2016</td>
-                        <td>BCN</td>
-                        <td>19:00</td>
-                        <td>Berlin</td>
-                        <td>20:00</td>
-                        <td>1:00 hour</td>
-                        <td>28$</td>
-                    </tr>   
+                    
                 </table>
+                
+                <br/><br/><br/>
+                
+                <table class="flights-table">
+                    <caption class="capt-light">Barcelona - Moscow</caption>
+                    <tr>
+                        <th>Departure</th>
+                        <th>Time</th>
+                        <th>Arrival</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Barcelona (B)</td>
+                        <td>19:00</td>
+                        <td>London (Gatw)</td>
+                        <td>21:00</td>
+                        <td>2 hours</td>
+                        <td>34$</td>
+                    </tr>
+                    <tr>
+                        <td>London (Gatw)</td>
+                        <td>22:00</td>
+                        <td>Berlin (Ausch)</td>
+                        <td>00:00</td>
+                        <td>2 hours</td>
+                        <td>64$</td>
+                    </tr>
+                    <tr>
+                        <td>Berlin (Ausch)</td>
+                        <td>00:00</td>
+                        <td>Moscow (Pl)</td>
+                        <td>3:30</td>
+                        <td>3:30 hours</td>
+                        <td>34$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><b>Total</b></td>
+                        <td><b>7:30 hours</b></td>
+                        <td><b>132$</b></td>
+                    </tr>
+                    
+                </table>
+                
+            </div>
 
+        </div>
+        
+        
+        <!--
+            FOOTER
+        -->
+        
+        <div id="footer">
+            <div class="footer-div left">
+                <ul> <b>Things you need to be able to travel.</b>
+                    <br/><br/>
+                    <li><em>A 35x50x20 bag.</em></li>
+                    <li><em>Don't take water.</em></li>
+                    <li><em>Be in the airport 2 hours before</em></li>
+                    <li><em>Don't be suspicious.</em></li>
+                </ul>
+            </div>
+            <div class="footer-div middle">
+                <ol> <b>Steps to be book a flight.</b>
+                    <br/><br/>
+                    <li><em>Fill the form in the index.</em></li>
+                    <li><em>Choose the flight that suits you the best.</em></li>
+                    <li><em>Fill the information needed.</em></li>
+                    <li><em>Submit the information</em></li>
+                </ol>
+            </div>
+            <div class="footer-div middle">
+                <dl> <b>You can contact us by:</b>
+                    <br/><br/>
+                    <dt><b>Phone</b></dt>
+                    <dd><em>933984576</em></dd>
+                    <dd><em>933984577</em></dd>
+                    <dd><em>933984578</em></dd>
+                    <dt><b>Mail</b></dt>
+                    <dd><em>foo@bar.com</em></dd>
+                    <dd><em>aux@hotmail.com</em></dd>
+                    <dt><b>Fax</b></dt>
+                    <dd><em>933984999</em></dd>
+                    <dt><b>Smoke Signals</b></dt>
+                    <dd><em>C. 90d 65m 45s</em></dd>
+                    <dd><em>C. 180d 3m 15s</em></dd>
+                    
+                </dl>
+            </div>
+            <div class="footer-div right">
+                <ul> <b>Things you need to be able to travel.</b>
+                    <br/><br/>
+                    <li><em>A 35x50x20 bag.</em></li>
+                    <li><em>Don't take water.</em></li>
+                    <li><em>Be in the airport 2 hours before</em></li>
+                </ul>
             </div>
         </div>
         
-        <div id="footer"></div>
-    
     </body>
     
 </html>

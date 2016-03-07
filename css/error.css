@@ -1,0 +1,28 @@
+#error-wrapper{
+    
+    width: 65%;
+    height: 90%;
+    position: absolute;
+    left:5%;
+    top: 18%;
+    
+}
+
+#error-num{
+    
+    text-align: center;
+    font-size: 25em;
+    margin: 10px auto 20px auto;
+    color: #555;
+    text-shadow: 3px 3px grey;
+    
+}
+
+
+#error-text{
+
+    text-align: center;
+    color: #111;
+    font-size: 2em;
+    
+}
