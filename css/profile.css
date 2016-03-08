@@ -52,11 +52,11 @@
 #my-flights-container {
     
     width: 70%;
-    height: 600px;
+    height: 1000px;
     margin-top: 25px;
     margin-left: 5%;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     display: inline-block;
     float: left;
 
@@ -69,20 +69,21 @@ div.flight {
     
     width: 90%;
     height: 60px;
-    background: grey;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     margin: 5px auto 5px auto;
     
 }
 
 div.f-preview {
     
-    width: 10%;
+    width: 12%;
     height: 100%;
-    background: red;
-    display: inline-block;
     float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid black;
     
 }
 
@@ -90,42 +91,27 @@ div.f-info {
     
     width: 80%;
     height: 100%;
-    background: blue;
-    display: inline-block;
     float: left;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid black;
     
 }
 
 div.f-price {
     
-    width: 10%;
+    width: 7%;
     height: 100%;
-    background: yellow;
-    display: inline-block;
     float: left;
-    text-align: center;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 img.flight-preview {
     
-    width: 50px;
-    height: 90%;
-    margin-left: 3%;
+    width: 99%;
+    height: 100%;
     display: inline-block;
-}
-
-h4.flight-info {
-    
-    display: inline-block;
-    line-height: 60px;
-    
-}
-
-h3.flight-price {
-    
-    display: inline-block;
-    line-height: 60px;
-    
 }
