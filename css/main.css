@@ -161,17 +161,35 @@ p.field-header-light {
     color: white;
     font-size: 10px;
     margin-bottom: 10px;
+    margin-left: 20px;
     
 }
 
 .footer-div ol,ul,dl{
     
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 35px;
     
 }
 
+.footer-div  li a {
+    
+    color: white;
+    
+}
+
+.footer-div  li a:hover {
+    
+    color: yellow;
+    
+}
+
+.footer-div  li a:visited {
+    
+    color: green;
+    
+}
 
 div.footer-div{
     

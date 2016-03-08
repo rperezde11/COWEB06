@@ -18,16 +18,16 @@
         <div id="header">
             
             <div id="header-logo">
-                <a href="#">
+                <a href="index.html">
                     <img src="imgs/logo.png" alt="Logo of the website." >
                 </a>
             </div>
             
             <div id="header-prof">
-                <a href="#">
+                <a href="profile.html">
                     <img class="profile-pic" src="imgs/avatar.png">
                 </a>
-                <a href="#">
+                <a href="register.html">
                     <div class="prof-info">Register</div>
                 </a>
             </div>
@@ -65,19 +65,31 @@
 
                             <p class="light-field-header">Second Name</p>
                             <input class="reg-input light-shadow" placeholder="Johnson" type="text" required="required" name="SecondName">
-                            <p class="light-field-header">Alias</p>
-                            <input class="reg-input light-shadow" placeholder="Insert Alias here..." type="text" required="required" name="Alias">
                             <p class="light-field-header">Email</p>
                             <input class="reg-input light-shadow" placeholder="example@domain.foo" type="text" required="required" name="Email">
                             <p class="light-field-header">Date of Birth</p>
                             <input class="reg-input light-shadow" type="date" required="required" name="Birth">
+                            
 
                             <p class="light-field-header">Gender</p>
                             <input class="general-input" id="Male" type="radio" name="Gender" value="Male" checked >
                             <label for="Male">Male</label>
                             <input class="general-input" id="Female" type="radio" name="Gender" value="Female"  >
                             <label for="Female">Female</label>
+                            
+                            <p class="light-field-header">Describe yourself... (250 characters)</p>
+                            <textarea class="reg-input light-shadow" cols="20" rows="3" placeholder="Explain how do you are..." maxlength="250" name="myself"></textarea>
 
+                            <p class="light-field-header">Hobbies</p>
+                            <input class="general-input" id="Books" type="checkbox" name="hobbies" value="Books"  >
+                            <label for="Female">Books</label>
+                            <input class="general-input" id="Travel" type="checkbox" name="hobbies" value="Travel"  >
+                            <label for="Female">Travel</label>
+                            <input class="general-input" id="Series" type="checkbox" name="hobbies" value="Series"  >
+                            <label for="Series">Series</label>
+                            <input class="general-input" id="Movies" type="checkbox" name="hobbies" value="Movies"  >
+                            <label for="Movies">Movies</label>
+                            
                         </div>
 
                     </div>
@@ -102,12 +114,13 @@
                             <p class="light-field-header">Credit Card Number</p>
                             <input class="reg-input light-shadow" placeholder="XXXX-XXXX-XXXX-XXXX" type="number" required="required" name="CardNumber">
                             <p class="light-field-header">Credit Card</p>
-                            <input class="general-input" id="Visa" type="radio" name="Card" value="Visa" checked >
-                            <label for="Visa">Visa</label><br/>
-                            <input class="general-input" id="Mastercard" type="radio" name="Card" value="Mastercard"  >
-                            <label for="Mastercard">Mastercard</label><br/>
-                            <input class="general-input" id="Electron" type="radio" name="Card" value="Electron"  >
-                            <label for="Electron">Visa Electron</label><br/>
+                            <select class="reg-input light-shadow" name="credit-card">
+                                <option selected>Visa</option>
+                                <option>Mastercard</option>
+                                <option>Electron</option>
+                                <option>Visa Premium</option>
+                                <option>La caixa</option>
+                            </select>
                         </div>
                     </div>
 
@@ -165,11 +178,11 @@
                 </dl>
             </div>
             <div class="footer-div right">
-                <ul> <b>Things you need to be able to travel.</b>
+                <ul> <b>Other sites you may be interested in:</b>
                     <br/><br/>
-                    <li><em>A 35x50x20 bag.</em></li>
-                    <li><em>Don't take water.</em></li>
-                    <li><em>Be in the airport 2 hours before</em></li>
+                    <li><a href="http://www.iberia.es"> Iberia's website </a></li>
+                    <li><a href="http://www.edreams.com"> Edream's website </a></li>
+                    <li><a href="http://www.vueling.es"> Vueling's website </a></li>
                 </ul>
             </div>
         </div>
