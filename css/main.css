@@ -243,7 +243,9 @@ div.prof-info {
 
 input[type="date"],
 input[type="number"],
-input[type="text"]
+input[type="text"],
+input[type="password"],
+textarea
 {
     
     border-radius: 4px;
@@ -360,6 +362,7 @@ span.hnav-image{
     background-image: url('../imgs/down.png');
     display:inline-block;
     line-height: 35px;
+    margin-left: 20px;
 }
 
 div.hnav-elem{

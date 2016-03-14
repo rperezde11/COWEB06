@@ -1,0 +1,11 @@
+#login-box {
+    
+    width: 200px;
+    height: 200px;
+    margin: 8% auto auto auto;
+    background: blue;
+    padding: 50px 100px 50px 100px;
+    border: 5px solid black;
+    border-radius: 350px;
+    
+}

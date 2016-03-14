@@ -34,10 +34,10 @@
             
             <div id="header-nav">
                 <ul>
-                    <li><a href="#"><div class="hnav-elem">Book a flight <span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Modify your booking <span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Book a flight <span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Contact Us <span class="hnav-image"></span></div></a></li><!--
+                    <li><a href="#"><div class="hnav-elem">Book a flight<span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Modify your booking<span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Help & FAQ<span class="hnav-image"></span></div></a></li><!--
+                    --><li><a href="#"><div class="hnav-elem">Contact Us<span class="hnav-image"></span></div></a></li><!--
                     -->
                 </ul>
             </div>
@@ -52,7 +52,7 @@
 
                 <hr/><br/>
 
-                 <form id="registration-form" name="registration" action="profile.php" method="post">
+                 <form id="registration-form" name="registration" action="validation.php?frm=register" method="post">
 
                     <div class="input-section">
 
@@ -61,35 +61,38 @@
                         <div class="input-container">
 
                             <p class="light-field-header">First Name</p>
-                            <input class="reg-input light-shadow" placeholder="Bryan" type="text" required="required" name="FirstName">
-
+                            <input class="reg-input light-shadow" placeholder="Bryan" type="text" required="required" name="firstName">
                             <p class="light-field-header">Second Name</p>
-                            <input class="reg-input light-shadow" placeholder="Johnson" type="text" required="required" name="SecondName">
+                            <input class="reg-input light-shadow" placeholder="Johnson" type="text" required="required" name="secondName">
+                            <p class="light-field-header">Your ID Number</p>
+                            <input class="reg-input light-shadow" placeholder="11111111A" type="text" required="required" name="id">
                             <p class="light-field-header">Email</p>
-                            <input class="reg-input light-shadow" placeholder="example@domain.foo" type="text" required="required" name="Email">
+                            <input class="reg-input light-shadow" placeholder="example@domain.foo" type="text" required="required" name="email">
+                            <p class="light-field-header">Password</p>
+                            <input class="reg-input light-shadow" type="password" required="required" name="password">
                             <p class="light-field-header">Date of Birth</p>
-                            <input class="reg-input light-shadow" type="date" required="required" name="Birth">
+                            <input class="reg-input light-shadow" type="date" required="required" name="birth">
                             
 
                             <p class="light-field-header">Gender</p>
-                            <input class="general-input" id="Male" type="radio" name="Gender" value="Male" checked >
+                            <input class="general-input" id="Male" type="radio" name="gender" value="Male" checked >
                             <label for="Male">Male</label>
-                            <input class="general-input" id="Female" type="radio" name="Gender" value="Female"  >
+                            <input class="general-input" id="Female" type="radio" name="gender" value="Female"  >
                             <label for="Female">Female</label>
                             
                             <p class="light-field-header">Describe yourself... (250 characters)</p>
-                            <textarea class="reg-input light-shadow" cols="20" rows="3" placeholder="Explain how do you are..." maxlength="250" name="myself"></textarea>
+                            <textarea class="reg-input light-shadow" cols="20" rows="3" placeholder="Explain how do you are..." maxlength="250" name="description"></textarea>
 
                             <p class="light-field-header">Hobbies</p>
-                            <input class="general-input" id="Books" type="checkbox" name="hobbies" value="Books"  >
+                            <input class="general-input" id="Books" type="checkbox" name="hobbies[]" value="Books"  >
                             <label for="Female">Books</label>
-                            <input class="general-input" id="Travel" type="checkbox" name="hobbies" value="Travel"  >
+                            <input class="general-input" id="Travel" type="checkbox" name="hobbies[]" value="Travel"  >
                             <label for="Female">Travel</label>
-                            <input class="general-input" id="Series" type="checkbox" name="hobbies" value="Series"  >
+                            <input class="general-input" id="Series" type="checkbox" name="hobbies[]" value="Series"  >
                             <label for="Series">Series</label>
-                            <input class="general-input" id="Movies" type="checkbox" name="hobbies" value="Movies"  >
+                            <input class="general-input" id="Movies" type="checkbox" name="hobbies[]" value="Movies"  >
                             <label for="Movies">Movies</label>
-                            
+     
                         </div>
 
                     </div>
@@ -99,28 +102,10 @@
                     <div class="input-section">
                         <h2>Location</h2>
                         <div class="input-container">
+                            <p class="light-field-header">Country</p>
+                            <input class="reg-input light-shadow" placeholder="England" type="text" required="required" name="country">
                             <p class="light-field-header">City</p>
-                            <input class="reg-input light-shadow" placeholder="Birmingham" type="text" required="required" name="City">
-                            <p class="light-field-header">Direction</p>
-                            <input class="reg-input light-shadow" placeholder="Avenue Name" type="text" required="required" name="Direction">
-                            <p class="light-field-header">Postal Code</p>
-                            <input class="reg-input light-shadow" placeholder="00000" type="number" required="required" name="PC">
-                        </div>
-                    </div>
-                    <br/><br/>
-                    <div class="input-section">
-                        <h2>Payment</h2>
-                        <div class="input-container">
-                            <p class="light-field-header">Credit Card Number</p>
-                            <input class="reg-input light-shadow" placeholder="XXXX-XXXX-XXXX-XXXX" type="number" required="required" name="CardNumber">
-                            <p class="light-field-header">Credit Card</p>
-                            <select class="reg-input light-shadow" name="credit-card">
-                                <option selected>Visa</option>
-                                <option>Mastercard</option>
-                                <option>Electron</option>
-                                <option>Visa Premium</option>
-                                <option>La caixa</option>
-                            </select>
+                            <input class="reg-input light-shadow" placeholder="Birmingham" type="text" required="required" name="city">
                         </div>
                     </div>
 

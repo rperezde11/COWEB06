@@ -25,6 +25,26 @@
     
 }
 
+#content-offers a:link table tr,
+#content-offers a:visited table tr,
+#content-offers a:active table tr {
+    
+    text-decoration: none; 
+    color: black;
+    border: 2px solid green;
+    border-radius: 10px;
+    
+}
+
+#content-offers a table:hover {
+    
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid purple;
+    border-radius: 10px;
+    
+}
+
 #prom{
     
     width: 100%;
