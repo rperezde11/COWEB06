@@ -14,15 +14,15 @@
 
     $db = DB::connect('world');
 
-    $cc1 = DB::getCC($db,$depCountry);
-    $cc2 = DB::getCC($db,$arrCountry);
+    $cc_1 = DB::getCC2($db,$depCountry);
+    $cc_2 = DB::getCC2($db,$arrCountry);
 
-    $nameExists = (!empty($cc1) && !empty($cc2));
+    $nameExists = (!empty($cc_1) && !empty($cc_2));
     $flights  = array();
 
     if($nameExists) {
-        $url1 = "http://www.crwflags.com/fotw/images/".$cc1[0][0]."/".substr($cc1[0],0,2).".gif";
-        $url2 = "http://www.crwflags.com/fotw/images/".$cc2[0][0]."/".substr($cc2[0],0,2).".gif";
+        $url1 = "http://www.crwflags.com/fotw/images/".$cc_1[0][0]."/".substr($cc_1[0],0,2).".gif";
+        $url2 = "http://www.crwflags.com/fotw/images/".$cc_2[0][0]."/".substr($cc_2[0],0,2).".gif";
         
         $flights = Mock::getRandomFlights($db,$depCountry,$arrCountry,50);
     }

@@ -16,9 +16,7 @@
 
     <div id="user-name"><?=$fn?></div>
     
-    <form method="get" action="removing-zone.php?idn=<?= $e ?>">
-        <input class="dark-submit" type="submit" value="Remove my account">
-    </form>
+    <a href="removing-zone.php?idn=<?=$e?>">Remove my account!</a>
 
     <div id="user-pic">
         <img id="profile-pic" src="imgs/logo.png">

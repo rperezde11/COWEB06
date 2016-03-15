@@ -43,12 +43,30 @@ class DB
         
         return DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN);
     }
+
+    
+    function similarity($w1,$w2) {
+        
+        return similar_text($w1,$w2);
+        
+    }
     
     function getCC($db,$country) {
         
         $qCountry = $db->quote($country);
             
         $sql = "SELECT code 
+                FROM countries 
+                WHERE name LIKE $qCountry";
+        
+        return DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN);
+    }
+    
+    function getCC2($db,$country) {
+        
+        $qCountry = $db->quote($country);
+            
+        $sql = "SELECT code2 
                 FROM countries 
                 WHERE name LIKE $qCountry";
         
@@ -76,8 +94,6 @@ class DB
         $sql = "SELECT id 
                 FROM students
                 WHERE email LIKE $qEmail";
-        
-        //var_dump(DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN));
          
         return DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0];
         
@@ -224,6 +240,24 @@ class DB
             
         }
         
+    }
+    
+    function createTableFlights($dbname"imdb_small") {
+        
+        $db = DB::connect($dbname);
+        
+        // Only one flight a day.
+        $sql = "CREATE TABLE flights (
+                                        dep VARCHAR(30) NOT NULL,
+                                        arr VARCHAR(30) NOT NULL,
+                                        dateA DATE NOT NULL,
+                                        dateB DATE NOT NULL,
+                                        PRIMARY KEY (dep,arr,dateA,dateB)
+                                     )";
+        
+        $db->beginTransaction();
+        $db->exec($sql);
+        $db->commit();
     }
     
 }
