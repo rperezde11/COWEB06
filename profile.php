@@ -1,46 +1,24 @@
 <?php
     include('utils-form.php');
     include('validateForm.php');
+    include('UtilsDB.php');
 
     $className = "profile";
     include('header.php');
-
-    $fromLogin = (UtilsForm::getPostParam('firstName') == null);
-
-
-    $fn = UtilsForm::getPostParam('firstName');
-    $sn = UtilsForm::getPostParam('secondName');
-    $id = UtilsForm::getPostParam('id');
-    $email = UtilsForm::getPostParam('email');
-    $birth = UtilsForm::getPostParam('birth');
-    $gender = UtilsForm::getPostParam('gender');
-    $description = UtilsForm::getPostParam('description');
-    $hobbies = UtilsForm::getPostParam("hobbies");
-    $country = UtilsForm::getPostParam('country');
-    $city = UtilsForm::getPostParam('city');
     
-    if(!$fromLogin){
-        
-        $isFNameValid = isNameValid($fn);
-        $isSNameValid = isNameValid($sn);
-        $isIdValid = isIdValid($id);
-        $isEmailValid = isEmailValid($email);
-        $isBirthValid = isDateOfBirthValid($birth);
+    $e = UtilsForm::getGetParam('idn');
 
-        if(!($isFNameValid and $isSNameValid and
-            $isIdValid and $isEmailValid and
-            $isBirthValid))
-        {
-            header("Location: register.html");
-        }
+    list($fn,$email,$password,$sn,$id,$birth,$gender,$description,$city,$country) = DB::getUserById($e);
     
-    }
-     
 ?>
                 
 <div id="user-info">
 
     <div id="user-name"><?=$fn?></div>
+    
+    <form method="get" action="removing-zone.php?idn=<?= $e ?>">
+        <input class="dark-submit" type="submit" value="Remove my account">
+    </form>
 
     <div id="user-pic">
         <img id="profile-pic" src="imgs/logo.png">
@@ -48,35 +26,20 @@
 
     <div id="user-data">
         <p class="top-nomargin">
-            <b><?= ($fn === null) ? 'NOT SET':UtilsForm::sec($fn) . " " . ($sn === null) ? 'NOT SET':UtilsForm::sec($sn) ?></b>
+            <b><?= UtilsForm::sec($fn) . " " . UtilsForm::sec($sn) ?></b>
         </p>
-        <p><b>Age</b><br/>
-            <em><?= ($birth === null) ? 'NOT SET':UtilsForm::sec(UtilsForm::getAge($birth)) ?></em>
+        <p>
+            <em><?= UtilsForm::sec(UtilsForm::getAge($birth)) . ", " . UtilsForm::sec($gender) ?></em>
         </p>
         <p><b>E-mail</b><br/>
             <em><?= UtilsForm::sec($email) ?></em>
         </p>
         <p><b>About Myself</b><br/>
-            <span class="gray"><em><?= ($description === null) ? 'NOT SET':UtilsForm::sec($description) ?></em></span>
-        </p>
-        <p><b>I like...</b><br/>
-            <span class="gray">
-                <em>
-                    <?php
-                        $len = count($hobbies);
-                        $str = '';
-                        for($i=0; $i<$len; $i++){
-                            $str .= UtilsForm::sec($hobbies[$i]);
-                            $str .= ($i==($len-1)) ? ".":", ";
-                        }
-                        echo $str;
-                    ?>
-                </em>
-            </span>
+            <span class="gray"><em><?= UtilsForm::sec($description) ?></em></span>
         </p>
         <p><b>I live in... </b><br/>
             <em>
-                <?= ($city === null) ? 'NOT SET':UtilsForm::sec($city)." (".($country === null) ? 'NOT SET':UtilsForm::sec($country).")"  ?>
+                <?= UtilsForm::sec($city)." (".UtilsForm::sec($country).")"  ?>
             </em>
         </p>
     </div>

@@ -24,7 +24,7 @@
             </div>
             
             <div id="header-prof">
-                <a href="profile.html">
+                <a href="login.php">
                     <img class="profile-pic" src="imgs/avatar.png">
                 </a>
                 <a href="register.html">
