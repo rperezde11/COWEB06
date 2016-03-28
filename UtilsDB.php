@@ -335,6 +335,16 @@ class DB
         return $cities;
     }
     
+    function getOffers($num){
+        
+        $db = DB::connect("eFlights");
+            
+        $sql = "SELECT id FROM flights ORDER BY price asc LIMIT $num";
+        
+        $id = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN,0);
+        return $id;
+    }
+    
     function existsFlight($dep,$arrival,$depDate,$arrivalDate,$dbname="eFlights") {
         
         $db = DB::connect($dbname);

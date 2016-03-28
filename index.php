@@ -45,10 +45,17 @@
             </div>
         
             <div id="content-offers">
+                <?php
+                    $offers = DB::getOffers(4);
+                ?>
                 <h2 class="section-header-light">Offers you may like...</h2>
-                <a href="booking.php">
+                <?php
+                    foreach($offers as $offer) {
+                        $flight = DB::getFlightById($offer);
+                ?>
+                <a href="booking.php?id=<?=$offer?>">
                     <table class="flights-table">
-                        <caption class="capt-light">Barcelona - Moscow</caption>
+                        <caption class="capt-light"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></caption>
                         <tr>
                             <th>Departure</th>
                             <th>Time</th>
@@ -58,34 +65,17 @@
                             <th>Price</th>
                         </tr>
                         <tr>
-                            <td>Barcelona (B)</td>
+                            <td><?=$flight[3]?></td>
                             <td>19:00</td>
-                            <td>London (Gatw)</td>
+                            <td><?=$flight[4]?></td>
                             <td>21:00</td>
                             <td>2 hours</td>
-                            <td>34$</td>
-                        </tr>
-    
-                        <tr>
-                            <td>London (Gatw)</td>
-                            <td>22:00</td>
-                            <td>Berlin (Ausch)</td>
-                            <td>00:00</td>
-                            <td>2 hours</td>
-                            <td>64$</td>
-                        </tr>
-                        <tr>
-                            <td>Berlin (Ausch)</td>
-                            <td>00:00</td>
-                            <td>Moscow (Pl)</td>
-                            <td>3:30</td>
-                            <td>3:30 hours</td>
-                            <td>34$</td>
+                            <td><?=$flight[7]?>$</td>
                         </tr>
                         <tr>
                             <td colspan="4"><b>Total</b></td>
-                            <td><b>7:30 hours</b></td>
-                            <td><b>132$</b></td>
+                            <td><b>2:00 hours</b></td>
+                            <td><b><?=$flight[3]?>$</b></td>
                         </tr>
                         <tfoot>
                             <tr>
@@ -95,6 +85,7 @@
     
                     </table>
                 </a>
+                <?php } ?>
                 <!--
                     <br/><br/><br/>
                 -->
