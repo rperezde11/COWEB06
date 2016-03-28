@@ -6,13 +6,12 @@
     include('utils-form.php');
     include('mock.php');
     
-
     $depCountry = UtilsForm::getGetParam('departure-country');
     $depDate = UtilsForm::getGetParam('departure-date');
     $arrCountry = UtilsForm::getGetParam('arrival-country');
     $arrDate = UtilsForm::getGetParam('arrival-date');
 
-    $db = DB::connect('world');
+    $db = DB::connect('eFlights');
 
     $cc_1 = DB::getCC2($db,$depCountry);
     $cc_2 = DB::getCC2($db,$arrCountry);
@@ -21,10 +20,10 @@
     $flights  = array();
 
     if($nameExists) {
-        $url1 = "http://www.crwflags.com/fotw/images/".$cc_1[0][0]."/".substr($cc_1[0],0,2).".gif";
-        $url2 = "http://www.crwflags.com/fotw/images/".$cc_2[0][0]."/".substr($cc_2[0],0,2).".gif";
+        $url1 = "http://www.crwflags.com/fotw/images/".$cc_1[0]."/".substr($cc_1,0,2).".gif";
+        $url2 = "http://www.crwflags.com/fotw/images/".$cc_2[0]."/".substr($cc_2,0,2).".gif";
         
-        $flights = Mock::getRandomFlights($db,$depCountry,$arrCountry,50);
+        $flights = DB::getFlightsBetweenCountries($depCountry,$arrCountry);
     }
 ?>
 
@@ -54,26 +53,29 @@
         
         $counter = 0;
         
-        foreach($flights as $flight) {
+        foreach($flights as $id) {
             
             if($counter > 11){
                 break;
             }
+            
+            $flight = DB::getFlightById($id);
     ?>
     
-    <div class="flight light-shadow">
-        <div class="f-preview">
-            <img class="flight-preview" alt="Flag from destination country" src="<?= $url1 ?>">
-            <img class="flight-preview" alt="Flag from arrival country" src="<?= $url2 ?>">
+    <a href="<?="booking.php?id=$id"?>" >
+        <div class="flight light-shadow">
+            <div class="f-preview">
+                <img class="flight-preview" alt="Flag from destination country" src="<?= $url1 ?>">
+                <img class="flight-preview" alt="Flag from arrival country" src="<?= $url2 ?>">
+            </div>
+            <div class="f-info">
+                <h4 class="flight-info"><?= $flight[3] ?> - <?= $flight[4] ?>  </h4>
+            </div>
+            <div class="f-price">
+                <h3 class="flight-price"><?= $flight[7] ?>$</h3>
+            </div>
         </div>
-        <div class="f-info">
-            <h4 class="flight-info"><?= $flight[0] ?> - <?= $flight[1] ?>  </h4>
-        </div>
-        <div class="f-price">
-            <h3 class="flight-price"><?= $flight[2] ?>$</h3>
-        </div>
-    </div>
-    
+    </a>
     <?php
             $counter++;
         }

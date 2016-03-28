@@ -6,17 +6,23 @@
     $className = "profile";
     include('header.php');
     
-    $e = UtilsForm::getGetParam('idn');
+    if(isset($_COOKIE["user_id"])){
+        $e = $_COOKIE["user_id"];    
+    } else {
+        header('Location: index.php');
+    }
+    
 
     list($fn,$email,$password,$sn,$id,$birth,$gender,$description,$city,$country) = DB::getUserById($e);
-    
+
+    $booked_flights = DB::getBookedFlights($e);
 ?>
                 
 <div id="user-info">
 
     <div id="user-name"><?=$fn?></div>
     
-    <a href="removing-zone.php?idn=<?=$e?>">Remove my account!</a>
+    <a href="removing-zone.php">Remove my account!</a>
 
     <div id="user-pic">
         <img id="profile-pic" src="imgs/logo.png">
@@ -46,19 +52,19 @@
 
 <div id="my-flights-container">
     <h2 class="section-header-light">My Flights</h2>
-<!--
+<?php foreach ($booked_flights as $flight) { ?>
     <div class="flight light-shadow">
         <div class="f-preview">
             <img class="flight-preview" src="imgs/sm-moscow.jpg">
         </div>
         <div class="f-info">
-            <h4 class="flight-info">Barcelona (EP) - Moscow (I) </h4>
+            <b><?=$flight[3]." (".$flight[1].") "?> - <?=" ".$flight[4]." (".$flight[2].")"?></b>
         </div>
         <div class="f-price">
-            <h3 class="flight-price">50$</h3>
+            <h3 class="flight-price"><?=$flight[7]?>$</h3>
         </div>
     </div>
--->
+<?php } ?>
 </div>
             
 <?php include('footer.php'); ?>

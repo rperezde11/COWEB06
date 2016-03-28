@@ -4,10 +4,12 @@
     include('validateForm.php');
     include('UtilsDB.php');
 
-    $id = UtilsForm::getParam('idn');
+    if(isset($_COOKIE["user_id"])){
+        $id = $_COOKIE["user_id"];
+        DB::removeUserById($id);
+        setcookie("user_id"); // specify only the name to destroy the cookie.
+    }
 
-    DB::removeUserById($id);
-
-    header('Location: index.html');
+    header('Location: index.php');
     
 ?>

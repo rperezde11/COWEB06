@@ -4,9 +4,6 @@
     include('validateForm.php');
     include('UtilsDB.php');
 
-    // this to create columns and stuff. once.
-    DB::alterTableStudents();
-
     $frm = UtilsForm::getParam('frm','login');
 
     if ($frm === 'register'){
@@ -26,9 +23,9 @@
         $isSNameValid = isNameValid($sn);
         $isIdValid = isIdValid($id_number);
         $isEmailValid = isEmailValid($email);
-        $isBirthValid = isDateOfBirthValid($birth);
+        $isBirthValid = isDateOfBirthValid($birthday);
         
-        if(!($isFNameValid and $isSNameValid and
+        if(($isFNameValid and $isSNameValid and
             $isIdValid and $isEmailValid and
             $isBirthValid))
         {
@@ -36,10 +33,16 @@
                       $birthday,$gender,$description,$country,$city);
             
             if($ret){
+                $id = DB::getUser($email);
+                var_dump($id);
+                setcookie("user_id", $id, time() + 86400); // 1 day
                 header('Location: login.php');
             } else {
                 header('Location: register.html');
             }
+        }
+        else {
+            header('Location: register.html');
         }
         
         
@@ -49,10 +52,11 @@
         $password = UtilsForm::getPostParam('password');
         $valid = DB::validateUser($email,$password);
         
-        $id = DB::getUserId($email);
+        $id = DB::getUser($email);
 
         if ($valid) {
-            header("Location: profile.php?idn=$id");
+            setcookie("user_id", $id, time() + 86400); // 1 day
+            header("Location: profile.php");
         } else {
             header('Location: login.php');
         }

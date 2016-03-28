@@ -4,15 +4,22 @@
     include('header.php');
     include('validateForm.php');
     include('utils-form.php');
+    include('utilsDB.php');
+
+    $flight_id = UtilsForm::getPostParam('flight_id');
+    $flight = DB::getFlightById($flight_id);
+    if(isset($_COOKIE["user_id"])){
+        $user_id = $_COOKIE["user_id"];
+    } else {
+        header('Location: index.php');
+    }
 ?>
 
 <h2 class="section-header-light">Flight Booking</h2>
 
 <div id="flight-info-header">
     <div class="info-text">
-        <div class="unique-flight-text">BCN - Londres</div>
-        <div class="unique-flight-text">Londres - Berlin</div>
-        <div class="unique-flight-text">Berlin - Moscow</div>
+        <div class="unique-flight-text"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></div>
     </div>
 </div>
 
@@ -62,6 +69,11 @@
     <h1 class="form-result-info">
         <?php
             $isOK = ($isFNameValid and $isSNameValid and $isEmailValid and $isIdValid and $isCardNumberValid);
+            
+            if($isOK) {
+                DB::createBooking($user_id,$flight_id);
+            }
+              
             if ($isOK) {
                 echo "<span style=\"color: green;\">Booking submitted successfully!</span>";
             } else {

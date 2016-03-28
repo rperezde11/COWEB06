@@ -112,3 +112,8 @@ img.flight-preview {
     margin-left: 35%;
     margin-top: 25%;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}

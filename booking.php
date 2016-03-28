@@ -1,18 +1,22 @@
 <?php 
     $className = "booking";
 
-    include('header.php'); 
+    include('header.php');
+    include('utils-form.php');
+    include('utilsDB.php');
+
+    $id = UtilsForm::getGetParam('id');
+    
+    $flight = DB::getFlightById($id);
 ?>
 
 <h2 class="section-header-light">Flight Booking</h2>
 
 <div id="flight-info-header">
     <div class="info-text">
-        <div class="unique-flight-text">BCN - Londres</div>
-        <div class="unique-flight-text">Londres - Berlin</div>
-        <div class="unique-flight-text">Berlin - Moscow</div>
+        <div class="unique-flight-text"><b><?=$flight[3]." (".$flight[1].") "?> - <?=" ".$flight[4]." (".$flight[2].")"?></b></div>
     </div>
-    <!--<div class="info-price"></div>-->
+    <div class="info-price"><?=$flight[7]?>$</div>
 </div>
 
 <div id="booking-form-container">
@@ -70,6 +74,7 @@
                 </select>
                 <p class="light-field-header">Credit Card Number</p>
                 <input class="reg-input light-shadow" placeholder="XXXX-XXXX-XXXX-XXXX" type="text" required="required" name="cardNumber">
+                <input type="hidden" name="flight_id" value="<?=$id?>">
             </div>
         </div>
 
