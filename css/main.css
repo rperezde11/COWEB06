@@ -286,6 +286,14 @@ input[type="submit"].dark-submit{
     
 }
 
+input.invalid {
+    background: #fdd;
+}
+
+input.valid {
+    background: #dfd;
+}
+
 
 /*****************************************************
 *   TABLE's

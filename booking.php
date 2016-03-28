@@ -33,13 +33,13 @@
             <h2>Personal</h2>
             <div class="input-container">
                 <p class="light-field-header">First Name</p>
-                <input class="reg-input light-shadow" placeholder="Bryan" type="text" required="required" name="firstName">
+                <input id="firstname" class="reg-input light-shadow" placeholder="Bryan" type="text" required="required" onkeyup="validateFirstName(event)" name="firstName">
                 <p class="light-field-header">Second Name</p>
-                <input class="reg-input light-shadow" placeholder="Johnson" type="text" required="required" name="secondName">
+                <input id="secondname" class="reg-input light-shadow" placeholder="Johnson" type="text" required="required" onkeyup="validateSecondName(event)" name="secondName">
                 <p class="light-field-header">Your ID Number</p>
-                <input class="reg-input light-shadow" placeholder="11111111A" type="text" required="required" name="id">
+                <input id="id_number" class="reg-input light-shadow" placeholder="11111111A" type="text" required="required" onkeyup="validateId(event)" name="id">
                 <p class="light-field-header">Email</p>
-                <input class="reg-input light-shadow" placeholder="example@domain.foo" type="text" name="email">             
+                <input id="email" class="reg-input light-shadow" placeholder="example@domain.foo" type="text" onkeyup="validateEmail(event)" name="email">             
             </div>
         </div>
         <br/><br/>
@@ -73,7 +73,7 @@
                     <option>La caixa</option>
                 </select>
                 <p class="light-field-header">Credit Card Number</p>
-                <input class="reg-input light-shadow" placeholder="XXXX-XXXX-XXXX-XXXX" type="text" required="required" name="cardNumber">
+                <input id="cardNumber" class="reg-input light-shadow" placeholder="XXXX-XXXX-XXXX-XXXX" type="text" required="required" onkeyup="validateCardNumber(event)" name="cardNumber">
                 <input type="hidden" name="flight_id" value="<?=$id?>">
             </div>
         </div>

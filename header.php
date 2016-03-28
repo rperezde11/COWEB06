@@ -11,6 +11,10 @@
                                        great, Rome, New York, Paris, London ">
         <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
         <link rel="stylesheet" type="text/css" href="css/<?=$className?>.css" media="screen">
+        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/<?=$className?>.js"></script>
+        
     </head>
     
     <body>
