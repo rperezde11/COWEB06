@@ -19,8 +19,9 @@
 
 <div id="flight-info-header">
     <div class="info-text">
-        <div class="unique-flight-text"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></div>
+        <div class="unique-flight-text"><b><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></b></div>
     </div>
+    <div class="info-price"><b><?=$flight[7]?>$</b></div>
 </div>
 
 <div id="booking-form-container">
@@ -76,6 +77,8 @@
               
             if ($isOK) {
                 echo "<span style=\"color: green;\">Booking submitted successfully!</span>";
+                echo "<script type=\"text/javascript\">Sound.play('music/lowrider.mp3')</script>";
+                echo "<img src=\"imgs/banana.gif\" alt=\"This will display a GIF\" onclick=\"stopAnimation(this)\" />";
             } else {
                 echo "<span style=\"color: red;\">Ooooops! Something went wrong...</span>";
             }

@@ -75,7 +75,7 @@
                         <tr>
                             <td colspan="4"><b>Total</b></td>
                             <td><b>2:00 hours</b></td>
-                            <td><b><?=$flight[3]?>$</b></td>
+                            <td><b><?=$flight[7]?>$</b></td>
                         </tr>
                         <tfoot>
                             <tr>

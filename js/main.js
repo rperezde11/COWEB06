@@ -136,12 +136,14 @@ document.observe("dom:loaded",function(){
     
     inputs.each(function(elem){
         elem.onclick=function(){
-            new Effect.Shake(this,{
-                                    duration: 0.2,
-                                    distance: 0.7
-                                }
-                           );
+            new Effect.Shake(this,{duration: 0.2,distance: 0.7});
         }
     });
+    
+    $("header-logo").onmouseenter = function(){
+        new Effect.Move(this,{x:40,duration:0.6,transition: Effect.Transitions.spring,afterFinish: function(el){
+            new Effect.Move(el.element,{x:-40,duration:0.6,transition: Effect.Transitions.spring});
+        }});
+    }
     
 });
