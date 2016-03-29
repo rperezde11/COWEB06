@@ -36,7 +36,7 @@
                         
                         <br/><br/><br/><br/>
                         
-                        <input class="dark-submit" type="submit" value="submit">
+                        <input id="search-index" class="dark-submit" type="submit" value="submit">
                         
                     </div>
                 

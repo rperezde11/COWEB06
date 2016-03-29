@@ -1,3 +1,4 @@
+// REGEX VALIDATION
 function emailValid(email)
 {
     var regex = /\b\w[^*^\/]*@[a-z]+.[a-z]{1,4}$/;
@@ -125,3 +126,22 @@ function validateCardNumber() {
         $("cardNumber").addClassName("invalid");
     }
 }
+
+
+// EFFECTS
+
+document.observe("dom:loaded",function(){ 
+    
+    var inputs = $$('input');
+    
+    inputs.each(function(elem){
+        elem.onclick=function(){
+            new Effect.Shake(this,{
+                                    duration: 0.2,
+                                    distance: 0.7
+                                }
+                           );
+        }
+    });
+    
+});
