@@ -390,6 +390,15 @@ class DB
         return DB::query($db,$sql)->fetch();
     }
     
+    function getPossibleCountries($name,$maxItems){
+        
+        $db = DB::connect("eFlights");
+        
+        $sql = "SELECT name FROM countries WHERE name LIKE '$name%' LIMIT $maxItems";
+        
+        return DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN,0);
+    }
+    
     // Create Tables
     function createCountriesTable() {
         

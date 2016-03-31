@@ -19,8 +19,9 @@
                     
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Departure</h4>
+                        <p id="suggestion-departure" class="field-header-dark">Country</p>
                         <p class="field-header-dark">Country</p>
-                        <input class="general-input" type="text" placeholder="BCN..." name="departure-country">
+                        <input id="country-departure" class="general-input" type="text" placeholder="BCN..." name="departure-country">
                         <p class="field-header-dark">Date</p>
                         <input class="general-input" type="date" name="departure-date">
                     </div>
@@ -30,7 +31,7 @@
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Arrival</h4>
                         <p class="field-header-dark">Country</p>
-                        <input class="general-input" type="text" placeholder="Moscow..." name="arrival-country">
+                        <input id="country-arrival" class="general-input" type="text" placeholder="Moscow..." name="arrival-country">
                         <p class="field-header-dark">Date</p>
                         <input class="general-input" type="date" name="arrival-date">
                         
