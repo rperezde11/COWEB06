@@ -19,7 +19,7 @@ document.observe("dom:loaded",function(){
     
     $("country-departure").onkeyup = function(){updateSuggestions($(this))};
     $("country-arrival").onkeyup = function(){updateSuggestions($(this))};
-
+    
 });
 
 function updateSuggestions(elem){
@@ -27,8 +27,10 @@ function updateSuggestions(elem){
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
+        
         if(xhttp.readyState==4 && xhttp.status==200){
-            $("suggestion-departure").innerHTML = xhttp.responseText;
+            elem.next().innerHTML = "";
+            elem.next().insert(xhttp.responseText);
         }
     }
     xhttp.open("GET","suggestion-country.php?q="+elem.value,true);

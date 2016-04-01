@@ -236,6 +236,25 @@ div.prof-info {
     
 }
 
+/*****************************************************
+*   SUGGESTIONS
+******************************************************/
+.suggestion-item{
+    height:15px;
+    width:90%;
+    background:#99c;
+    font-weight:bold;
+    color:#000;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #000;
+    font-size:11px;
+}
+
+.suggestion-item:hover{
+    background:#558;
+    color: aliceblue;
+}
 
 /*****************************************************
 *   INPUTs

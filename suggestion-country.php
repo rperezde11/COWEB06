@@ -1,3 +1,15 @@
+<script>
+$$(".suggestion-item").each(function(elem){
+    elem.onclick = function(){applySuggestion($(this),$(this).up(1).previous())};
+});
+    
+function applySuggestion(item,to){
+    console.log(item,to);
+    to.value = item.innerHTML;
+    item.up('div',1).innerHTML="";
+}  
+</script>
+
 <?php 
 
 include('UtilsDB.php');
@@ -7,15 +19,15 @@ $max = 4;
 
 $name = UtilsForm::getGetParam('q');
 $suggestions = DB::getPossibleCountries($name,$max);
-$response = "<ul style='list-style-type:none'>";
+$response = "<div id='suggestion-list'>";
 
 $limit = 4; $count = 0;
 
 foreach($suggestions as $country){
-    $response .= "<li>".$country."</li><br/>";
+    $response .= "<div class='suggestion-item'>".$country."</div>";
 }
 
-$response .= "</ul>";
+$response .= "</div>";
 
 echo $response;
 ?>

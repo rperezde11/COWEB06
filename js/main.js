@@ -147,3 +147,6 @@ document.observe("dom:loaded",function(){
     }
     
 });
+
+
+// SUGGESTION FUNCTIONS

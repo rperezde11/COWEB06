@@ -392,6 +392,10 @@ class DB
     
     function getPossibleCountries($name,$maxItems){
         
+        if($name==""){
+            return array();
+        }
+        
         $db = DB::connect("eFlights");
         
         $sql = "SELECT name FROM countries WHERE name LIKE '$name%' LIMIT $maxItems";
