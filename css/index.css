@@ -9,11 +9,13 @@
 
 #content-offers{
     
-    width: 80%;
+    width: 40%;
     height: 1050px;
     float: left;
     background: white;
     text-decoration: none;
+    padding-left: 20%;
+    padding-right: 20%;
     
 }
 

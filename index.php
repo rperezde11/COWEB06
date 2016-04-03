@@ -7,7 +7,7 @@
 ?>
             <div id="prom-wrapper">
                 <div id="prom">
-                    <img src="imgs/rome.jpg" alt="Image of a place in the world.">
+                    <img id="prom-img" src="imgs/rome.jpg" alt="Image of a place in the world.">
                 </div>
             </div>
             

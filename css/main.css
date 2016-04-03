@@ -257,6 +257,37 @@ div.prof-info {
 }
 
 /*****************************************************
+*   HEADER LIST
+******************************************************/
+.hnav-list-item{
+    height:30px;
+    width:100%;
+    background:#99c;
+    font-weight:bold;
+    color:#000;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #000;
+    font-size:11px;
+    position: relative;
+    z-index: 1;
+}
+
+.hnav-list-item:hover{
+    background:#558;
+    color: aliceblue;
+}
+
+.hnav-list-wrapper{
+    position: absolute;
+    width: 25%;
+}
+
+.invisible{
+    display: none;
+}
+
+/*****************************************************
 *   INPUTs
 ******************************************************/
 
@@ -305,6 +336,21 @@ input[type="submit"].dark-submit{
     
 }
 
+button.dark-submit{
+    
+    width: 90%;
+    height: 50px;
+    font-size: 35px;
+    text-shadow: 1px 1px 2px black;
+    font-style: normal;
+    font-weight: bold;
+    color: aliceblue;
+    border: 1px solid #005500;
+    box-shadow: 0px 0px 15px 1px #222;
+    background: #50b33c;
+    
+}
+
 input.invalid {
     background: #fdd;
 }
@@ -322,7 +368,7 @@ table.flights-table {
     
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 100%;
     margin-bottom: 15px;
     text-align: center;
 }

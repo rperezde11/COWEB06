@@ -19,33 +19,12 @@
         $country = UtilsForm::getPostParam('country');
         $city = UtilsForm::getPostParam('city');
         
-        $isFNameValid = isNameValid($fn);
-        $isSNameValid = isNameValid($sn);
-        $isIdValid = isIdValid($id_number);
-        $isEmailValid = isEmailValid($email);
-        $isBirthValid = isDateOfBirthValid($birthday);
-        
-        if(($isFNameValid and $isSNameValid and
-            $isIdValid and $isEmailValid and
-            $isBirthValid))
-        {
-             $ret = DB::createUser($fn,$sn,$id_number,$email,$password,
-                      $birthday,$gender,$description,$country,$city);
-            
-            if($ret){
-                $id = DB::getUser($email);
-                var_dump($id);
-                setcookie("user_id", $id, time() + 86400); // 1 day
-                header('Location: login.php');
-            } else {
-                header('Location: register.html');
-            }
-        }
-        else {
-            header('Location: register.html');
-        }
-        
-        
+        $ret = DB::createUser($fn,$sn,$id_number,$email,$password,
+              $birthday,$gender,$description,$country,$city);
+
+        if($ret){
+            header('Location: login.php');
+        }  
     }elseif($frm === 'login'){
         
         $email = UtilsForm::getPostParam('email');

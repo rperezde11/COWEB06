@@ -36,3 +36,16 @@ function updateSuggestions(elem){
     xhttp.open("GET","suggestion-country.php?q="+elem.value,true);
     xhttp.send();
 }
+
+
+var images = ["rome.jpg","prague.jpg","venice.jpg","london.jpg"];
+var counter= 1;
+setInterval(function(){
+                $("prom-img").src = "imgs/"+images[counter]; 
+                if(counter<(images.length-1)){
+                    counter++;
+                } else {
+                    counter=0;
+                }
+            },
+            10000);

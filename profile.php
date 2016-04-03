@@ -20,12 +20,10 @@
                 
 <div id="user-info">
 
-    <div id="user-name"><?=$fn?></div>
-    
-    <a href="removing-zone.php">Remove my account!</a>
+    <div id="user-name"><?=$fn?><a href="removing-zone.php"><img style="margin-left: 5px;" src="imgs/remove.png"/></a></div>
 
     <div id="user-pic">
-        <img id="profile-pic" src="imgs/logo.png">
+        <img id="profile-pic" src="imgs/profile.jpg">
     </div>
 
     <div id="user-data">
@@ -38,7 +36,7 @@
         <p><b>E-mail</b><br/>
             <em><?= UtilsForm::sec($email) ?></em>
         </p>
-        <p><b>About Myself</b><br/>
+        <p><b>Aboot Myself</b><br/>
             <span class="gray"><em><?= UtilsForm::sec($description) ?></em></span>
         </p>
         <p><b>I live in... </b><br/>

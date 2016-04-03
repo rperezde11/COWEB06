@@ -4,7 +4,6 @@ $$(".suggestion-item").each(function(elem){
 });
     
 function applySuggestion(item,to){
-    console.log(item,to);
     to.value = item.innerHTML;
     item.up('div',1).innerHTML="";
 }  

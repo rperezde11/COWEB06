@@ -71,9 +71,7 @@ class DB
                 FROM users
                 WHERE email LIKE $qEmail";
         
-        DB::index("eFlights","users","email",true);
         $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0];
-        DB::index("eFlights","users","email",false);
         
         return (0 != $res);
     }
@@ -87,9 +85,7 @@ class DB
                 FROM users
                 WHERE email LIKE $qEmail";
          
-        DB::index("eFlights","users","email",true);
         $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0];
-        DB::index("eFlights","users","email",false);
          
         return $res;
         
@@ -475,7 +471,7 @@ class DB
                 echo $ex;
             }
             
-            DB::populateTableFlights(10000);
+            DB::populateTableFlights(5000);
         } else {
             DB::populateTableFlights(20);
         }
@@ -547,6 +543,7 @@ class DB
             DB::fillCitiesTable();
             DB::createTableFlights();
             DB::createUsersTable();
+            DB::fillStartingUsers();
             DB::createBookingsTable();
         }
         
@@ -583,7 +580,8 @@ class DB
        $sql = "INSERT INTO countries
                 SELECT countries_aux.code,countries_aux.code2,countries_aux.name,countries_aux.local_name
                 FROM world.countries AS countries_aux
-                WHERE countries_aux.continent LIKE 'EUROPE'";
+                WHERE countries_aux.continent LIKE 'EUROPE'
+                AND countries_aux.population > 4500000";
         
         try{
             $db->exec($sql);   
@@ -591,6 +589,18 @@ class DB
             echo "<p>".$ex."</p>";
         }
 
+    }
+    
+    function fillStartingUsers(){
+        DB::createUser("admin","admin","11111111A","admin@eflights.com",
+                        "admin","1990-01-01","Male","",
+                        "England","Manchester");
+        DB::createUser("test","test","11111111A","test@eflights.com",
+                        "test","1990-01-01","Male","",
+                        "England","London");
+        DB::createUser("Raul","Perez","47188116M","raulp_prat@hotmail.com",
+                        "12345678","1993-09-10","Male","",
+                        "Spain","Barcelona");
     }
     
     function createFlight($dep,$arrival,$dep_cc,$arr_cc,$depDate,$arrivalDate,$price,$left,$dbname="eFlights") {

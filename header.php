@@ -39,12 +39,51 @@
             
             <div id="header-nav">
                 <ul>
-                    <li><a href="#"><div class="hnav-elem">Book a flight<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Modify your booking<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Help & FAQ<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Contact Us<span class="hnav-image"></span></div></a></li><!--
-                    -->
-                </ul>
+                    <li>
+                        <a href="#">
+                            <div class="hnav-elem">Book a flight<span class="hnav-image"></span></div>
+                            <div class="hnav-list-wrapper ">
+                                <div class="hnav-list-item">Book Option #1</div>
+                                <div class="hnav-list-item">Book Option #2</div>
+                                <div class="hnav-list-item">Book Option #3</div>
+                                <div class="hnav-list-item">Book Option #4</div>
+                            </div>
+                        </a>
+                    </li><!--
+                --><li>
+                        <a href="#">
+                            <div class="hnav-elem">Modify your booking<span class="hnav-image"></span></div>
+                            <div class="hnav-list-wrapper ">
+                                <div class="hnav-list-item">Modify Booking Option #1</div>
+                                <div class="hnav-list-item">Modify Booking Option #2</div>
+                                <div class="hnav-list-item">Modify Booking Option #3</div>
+                                <div class="hnav-list-item">Modify Booking Option #4</div>
+                            </div>
+                        </a>
+                    </li><!--
+                --><li>
+                        <a href="#">
+                            <div class="hnav-elem">Help & FAQ<span class="hnav-image"></span></div>
+                            <div class="hnav-list-wrapper ">
+                                <div class="hnav-list-item">Help Option #1</div>
+                                <div class="hnav-list-item">Help Option #2</div>
+                                <div class="hnav-list-item">FAQ Option #3</div>
+                                <div class="hnav-list-item">FAQ Option #4</div>
+                            </div>
+                        </a>
+                    </li><!--
+                --><li>
+                        <a href="#">
+                            <div class="hnav-elem">Contact Us<span class="hnav-image"></span></div>
+                            <div class="hnav-list-wrapper">
+                                <div class="hnav-list-item">Contact Option #1</div>
+                                <div class="hnav-list-item">Contact Option #2</div>
+                                <div class="hnav-list-item">Contact Option #3</div>
+                                <div class="hnav-list-item">Contact Option #4</div>
+                            </div>
+                        </a>
+                    </li><!--
+                --></ul>
             </div>
             
         </div>

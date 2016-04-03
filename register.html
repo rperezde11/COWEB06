@@ -65,17 +65,17 @@
                         <div class="input-container">
 
                             <p class="light-field-header">First Name</p>
-                            <input id="firstname" class="reg-input light-shadow" onkeyup="validateFirstName(event)" placeholder="Bryan" type="text" required="required" name="firstName">
+                            <input id="firstname" class="reg-input light-shadow val-input" onkeyup="validateFirstName(event)" placeholder="Bryan" type="text" required="required" name="firstName" autocomplete="off">
                             <p class="light-field-header">Second Name</p>
-                            <input id="secondname" class="reg-input light-shadow" onkeyup="validateSecondName(event)" placeholder="Johnson" type="text" required="required" name="secondName">
+                            <input id="secondname" class="reg-input light-shadow val-input" onkeyup="validateSecondName(event)" placeholder="Johnson" type="text" required="required" name="secondName" autocomplete="off">
                             <p class="light-field-header">Your ID Number</p>
-                            <input id="id_number" class="reg-input light-shadow" onkeyup="validateId(event)" placeholder="11111111A" type="text" required="required" name="id">
+                            <input id="id_number" class="reg-input light-shadow val-input" onkeyup="validateId(event)" placeholder="11111111A" type="text" required="required" name="id" autocomplete="off">
                             <p class="light-field-header">Email</p>
-                            <input id="email" class="reg-input light-shadow" onkeyup="validateEmail(event)" placeholder="example@domain.foo" value="" type="text" required="required" name="email">
+                            <input id="email" class="reg-input light-shadow val-input" onkeyup="validateEmail(event)" placeholder="example@domain.foo" value="" type="text" required="required" name="email" autocomplete="off">
                             <p class="light-field-header">Password</p>
-                            <input id="password" class="reg-input light-shadow" onkeyup="validatePassword(event)" type="password" required="required" name="password">
+                            <input id="password" class="reg-input light-shadow val-input" onkeyup="validatePassword(event)" type="password" required="required" name="password" autocomplete="off">
                             <p class="light-field-header">Date of Birth</p>
-                            <input id="birth" class="reg-input light-shadow" onkeyup="validateBirth(event)" type="date" required="required" name="birth">
+                            <input id="birth" class="reg-input light-shadow val-input" onkeyup="validateBirth(event)" type="date" required="required" name="birth" autocomplete="off">
                             
                             <p id="gender" class="light-field-header">Gender</p>
                             <input class="general-input" id="Male" type="radio" name="gender" value="Male" checked >
@@ -112,11 +112,11 @@
                         </div>
                     </div>
 
-                    <br/><br/><br/>
-
-                    <input class="dark-submit" type="submit" value="Register!">
-
                 </form>
+                
+                <br/><br/><br/>
+
+                <button id="submit-register" class="dark-submit">Register now!</button>
 
             </div>
             

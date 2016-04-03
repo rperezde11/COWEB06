@@ -8,7 +8,7 @@ function emailValid(email)
 
 function nameValid(name)
 {
-    var regex = /[a-zA-Z ]+/;
+    var regex = /\b[a-zA-Z ]+$/;
     var res = regex.test(name);
     return res;
 }
@@ -57,7 +57,6 @@ function validateFirstName() {
 function validateSecondName() {
     var text = $("secondname").value;
     var valid = nameValid(text);
-    console.log(text,valid);
     if(valid){
         $("secondname").removeClassName("invalid");
         $("secondname").addClassName("valid");
@@ -146,7 +145,20 @@ document.observe("dom:loaded",function(){
         }});
     }
     
+    $$(".hnav-elem").each(function(elem){
+        new Effect.BlindUp(elem.next('div'),{duration:0});
+        elem.addClassName('folded');
+    });
+    
+    $$(".hnav-elem").each(function(elem){
+        elem.onclick = function(){
+            elem.toggleClassName('folded');
+            if(elem.hasClassName('folded')){
+                new Effect.BlindUp(this.next('div'),{duration:0.6});
+            }else{
+                new Effect.BlindDown(this.next('div'),{duration:0.6});
+            }
+            
+        }
+    });
 });
-
-
-// SUGGESTION FUNCTIONS
