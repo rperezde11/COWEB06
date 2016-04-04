@@ -73,6 +73,7 @@ div.f-preview {
     align-items: center;
     justify-content: center;
     border-right: 1px solid black;
+    background: #000000;
     
 }
 
@@ -100,9 +101,10 @@ div.f-price {
 
 img.flight-preview {
     
-    width: 49%;
+    width: 50%;
     height: 100%;
     display: inline-block;
+    background: #000000;
 }
 
 .grey {
