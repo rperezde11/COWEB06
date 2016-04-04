@@ -6,15 +6,16 @@
 
 <h2 class="section-header-light">Login</h2>
 <div id="login-box" class="light-shadow">  
-    <form action="validation.php" method="post">            
+    <form id="form-login" action="validation.php" method="post">            
         <p class="field-header-dark">E-mail</p>
-        <input class="general-input" type="text" placeholder="john.doe@gmail.com" required="required" name="email">
+        <input id="email-input" class="general-input val-input" type="text" placeholder="john.doe@gmail.com" required="required" name="email">
         <br/>
         <p class="field-header-dark">Password</p>
-        <input class="general-input" type="password" required="required" name="password">
-        <br/><br/>
-        <input class="dark-submit" type="submit" value="Login">
-    </form>   
+        <input id="password-input" class="general-input val-input" type="password" required="required" name="password">
+    </form>
+    <br/><br/>
+    <button id="submit-login" class="dark-submit">Login</button>
+    
 </div>
 
 <?php include('footer.php'); ?>

@@ -14,10 +14,14 @@
 
 .search-button {
     
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    float: left;
     background-image: url(../imgs/search.png);
     background-size: cover;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #5a5;
     float: left;
 }
 
@@ -116,4 +120,52 @@ img.flight-preview {
 a {
     text-decoration: none;
     color: black;
+}
+
+.searcher-wrapper {
+    width: 200px;
+}
+
+.search-input {
+    float: left;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 30px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.search-input:focus {
+    float: left;
+    height: 30px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background: azure;
+}
+
+.country-info-container {
+    width: 90%;
+    height: 20px;
+    margin-top: 25px;
+    margin-left: 5%;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    display: flex;
+    float: left;
+    align-items: baseline;
+}
+
+.flight-country-info {
+    display: inline;
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#city-filter-button {
+    margin-left: -35px;
+}
+
+.spacer {
+    height: 1px;
+    width: 50%
 }

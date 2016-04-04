@@ -120,7 +120,6 @@ class DB
                 password LIKE $qPass";
         
         return (0 != DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0]);
-        
     }
     
     function createUser($name,$lastname,$id_number,$email,
@@ -363,16 +362,24 @@ class DB
         
     }
     
-    function getFlightsBetweenCountries($countryA, $countryB){
+    function getFlightsBetweenCountries($countryA, $countryB, $search=null){
         
         $db = DB::connect("eFlights");
         
-        $departure = DB::getCC($db,$countryA);
-        $arrival = DB::getCC($db,$countryB);
+        $departure = $db->quote(DB::getCC($db,$countryA));
+        $arrival = $db->quote(DB::getCC($db,$countryB));
         
-        $sql = "SELECT id FROM flights WHERE c_dep LIKE '$departure' AND c_arr LIKE '$arrival'";
+        $sql = "SELECT id FROM flights WHERE c_dep LIKE $departure AND c_arr LIKE $arrival";
         
-        $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN);
+        if ($search) {
+            $sql .= " AND ( dep LIKE " . $db->quote($search) . " OR arr LIKE " . $db->quote($search) . " )";
+        }
+        
+        $res = DB::query($db,$sql);
+            
+        if($res) {
+            $res = $res->fetchAll(PDO::FETCH_COLUMN);   
+        }
         
         return $res;
     }
@@ -471,9 +478,7 @@ class DB
                 echo $ex;
             }
             
-            DB::populateTableFlights(5000);
-        } else {
-            DB::populateTableFlights(20);
+            DB::populateTableFlights(500);
         }
     }
     
@@ -581,7 +586,8 @@ class DB
                 SELECT countries_aux.code,countries_aux.code2,countries_aux.name,countries_aux.local_name
                 FROM world.countries AS countries_aux
                 WHERE countries_aux.continent LIKE 'EUROPE'
-                AND countries_aux.population > 4500000";
+                ORDER BY countries_aux.population DESC
+                LIMIT 5";
         
         try{
             $db->exec($sql);   

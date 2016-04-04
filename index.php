@@ -25,7 +25,7 @@
                             <div id="suggestion-dep"></div>
                         </div>
                         <p class="field-header-dark">Date</p>
-                        <input class="general-input" type="date" name="departure-date">
+                        <input class="general-input" type="date" required="required" name="departure-date">
                     </div>
                     
                     <br/><br/>
@@ -38,7 +38,7 @@
                             <div id="suggestion-arr"></div>
                         </div>
                         <p class="field-header-dark">Date</p>
-                        <input class="general-input" type="date" name="arrival-date">
+                        <input class="general-input" type="date" required="required" name="arrival-date">
                         
                         <br/><br/><br/><br/>
                         

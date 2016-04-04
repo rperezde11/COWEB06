@@ -20,6 +20,8 @@ document.observe("dom:loaded",function(){
     $("country-departure").onkeyup = function(){updateSuggestions($(this))};
     $("country-arrival").onkeyup = function(){updateSuggestions($(this))};
     
+    new Effect.Opacity($("prom-img"),{duration:8,from:1.0,to:0.3});
+    
 });
 
 function updateSuggestions(elem){
@@ -47,5 +49,15 @@ setInterval(function(){
                 } else {
                     counter=0;
                 }
+            },
+            10000);
+var fade = false;
+setInterval(function(){
+                if (fade) {
+                    new Effect.Opacity($("prom-img"),{duration:8,from:1.0,to:0.3});
+                } else {
+                    new Effect.Opacity($("prom-img"),{duration:8,from:0.3,to:1.0});
+                }
+                fade ^= true;
             },
             10000);
