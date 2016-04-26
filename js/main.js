@@ -128,7 +128,6 @@ function validateCardNumber() {
 
 
 // EFFECTS
-
 document.observe("dom:loaded",function(){ 
     
     var inputs = $$('input');
