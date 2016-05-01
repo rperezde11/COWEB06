@@ -9,7 +9,6 @@ document.observe("dom:loaded",function(){
 });
 
 // AJAX FUNCTIONS
-
 function userValid() {
     new Ajax.Request("validate-login.php",{
         method:"post",

@@ -140,9 +140,18 @@ document.observe("dom:loaded",function(){
     });
     
     $("header-logo").onmouseenter = function(){
-        new Effect.Move(this,{x:40,duration:0.6,transition: Effect.Transitions.spring,afterFinish: function(el){
-            new Effect.Move(el.element,{x:-40,duration:0.6,transition: Effect.Transitions.spring});
-        }});
+        new Effect.Move(this,{x:40,
+                              duration:0.6,
+                              transition: Effect.Transitions.spring,
+                              afterFinish: function(el){
+                                new Effect.Move(el.element,
+                                                {x:-40,
+                                                 duration:0.6,
+                                                 transition: Effect.Transitions.spring}
+                                               );
+                                            }
+                             }
+                       );
     }
     
     $$(".hnav-elem").each(function(elem){

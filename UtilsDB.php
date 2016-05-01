@@ -260,7 +260,8 @@ class DB
         
         $db = DB::connect("eFlights");
             
-        $sql = "UPDATE flights SET seats_left = seats_left " . (($add)?'+':'-') . " 1 WHERE id = $id";
+        $sql = "UPDATE flights SET seats_left = seats_left " . 
+                        (($add)?'+':'-') . " 1 WHERE id = $id";
         
         try{
             $db->exec($sql);
@@ -674,7 +675,7 @@ class DB
     function connect($dbName=null, $u="root", $pass=""){
         
         try{
-            $db = new PDO("mysql:host=localhost;". (($dbName) ? "dbname=".$dbName.";":"") . "charset=utf8","$u","$pass");
+            $db = new PDO("mysql:host=localhost;". (($dbName) ?"dbname=".$dbName.";":"") . "charset=utf8","$u","$pass");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $ex) {
             echo "There was an error connecting to the DB...\n";
@@ -683,18 +684,15 @@ class DB
         }
         return $db;
     }
-    
     function query($db, $sql) {
         
         $result = null;
-        
         try{
             $result = $db->query($sql);   
         } catch (PDOException $ex) {
             echo "There was an error querying the DB...\n";
             echo $ex->getMessage();
         }
-    
         return $result;
     }
     

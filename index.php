@@ -16,7 +16,6 @@
                 <h2 class="section-header-dark">Select your flight!</h2>
                 
                 <form action="results.php" method="get">
-                    
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Departure</h4>
                         <p class="field-header-dark">Country</p>
@@ -27,9 +26,7 @@
                         <p class="field-header-dark">Date</p>
                         <input class="general-input" type="date" required="required" name="departure-date">
                     </div>
-                    
                     <br/><br/>
-                    
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Arrival</h4>
                         <p class="field-header-dark">Country</p>
