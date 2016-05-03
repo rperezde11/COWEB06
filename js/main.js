@@ -130,6 +130,11 @@ function validateCardNumber() {
 // EFFECTS
 document.observe("dom:loaded",function(){ 
     
+    jq(".hnav-list-wrapper").hide();
+    
+    var isInList = false;
+    var isInButton = false;
+    
     var inputs = $$('input');
     
     inputs.each(function(elem){
@@ -138,35 +143,19 @@ document.observe("dom:loaded",function(){
         }
     });
     
-    $("header-logo").onmouseenter = function(){
-        new Effect.Move(this,{x:40,
-                              duration:0.6,
-                              transition: Effect.Transitions.spring,
-                              afterFinish: function(el){
-                                new Effect.Move(el.element,
-                                                {x:-40,
-                                                 duration:0.6,
-                                                 transition: Effect.Transitions.spring}
-                                               );
-                                            }
-                             }
-                       );
-    }
-    
-    $$(".hnav-elem").each(function(elem){
-        new Effect.BlindUp(elem.next('div'),{duration:0});
-        elem.addClassName('folded');
+    jq("#header-logo").mouseenter(function(){
+        jq(this).animate({left: "+=30px"}, 1000, 'easeInBack', function(){
+                    jq(this).animate({left: "-=30px"}, 1000, 'easeOutBack');
+        });
     });
     
-    $$(".hnav-elem").each(function(elem){
-        elem.onclick = function(){
-            elem.toggleClassName('folded');
-            if(elem.hasClassName('folded')){
-                new Effect.BlindUp(this.next('div'),{duration:0.6});
-            }else{
-                new Effect.BlindDown(this.next('div'),{duration:0.6});
-            }
-            
-        }
+    jq(".nav-list-item").mouseover(function(){
+        jq(this).children().children().first().next().slideDown(350, 'easeInExpo');
     });
+    
+    
+    jq(".nav-list-item").mouseleave(function(){
+        jq(this).children().children().first().next().slideUp(350, 'easeInExpo');            
+    });
+
 });

@@ -42,7 +42,7 @@
             
             <div id="header-nav">
                 <ul>
-                    <li>
+                    <li class="nav-list-item">
                         <a href="#">
                             <div class="hnav-elem">Book a flight<span class="hnav-image"></span></div>
                             <div class="hnav-list-wrapper ">
@@ -53,7 +53,7 @@
                             </div>
                         </a>
                     </li><!--
-                --><li>
+                --><li class="nav-list-item">
                         <a href="#">
                             <div class="hnav-elem">Modify your booking<span class="hnav-image"></span></div>
                             <div class="hnav-list-wrapper ">
@@ -64,7 +64,7 @@
                             </div>
                         </a>
                     </li><!--
-                --><li>
+                --><li class="nav-list-item">
                         <a href="#">
                             <div class="hnav-elem">Help & FAQ<span class="hnav-image"></span></div>
                             <div class="hnav-list-wrapper ">
@@ -75,7 +75,7 @@
                             </div>
                         </a>
                     </li><!--
-                --><li>
+                --><li class="nav-list-item">
                         <a href="#">
                             <div class="hnav-elem">Contact Us<span class="hnav-image"></span></div>
                             <div class="hnav-list-wrapper">

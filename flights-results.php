@@ -31,6 +31,10 @@ if ($nameExists) {
 
 $counter = 0;
 
+?>
+<ul id="sortable-flights">
+<?php
+
 foreach($flights as $id) {
 
     if($counter > 11){
@@ -40,22 +44,26 @@ foreach($flights as $id) {
     $flight = DB::getFlightById($id);
 ?>
 
-<a href="<?="booking.php?id=$id"?>" >
-<div class="flight light-shadow">
-    <div class="f-preview">
-        <img class="flight-preview" alt="Flag from destination country" src="<?= $url1 ?>">
-        <img class="flight-preview" alt="Flag from arrival country" src="<?= $url2 ?>">
+<li class="sortable-element flight-item">
+    <a href="<?="booking.php?id=$id"?>" >
+    <div class="flight light-shadow draggable">
+        <div class="f-preview">
+            <img class="flight-preview" alt="Flag from destination country" src="<?= $url1 ?>">
+            <img class="flight-preview" alt="Flag from arrival country" src="<?= $url2 ?>">
+        </div>
+        <div class="f-info">
+            <h4 class="flight-info"><?= $flight[3] ?> - <?= $flight[4] ?>  </h4>
+        </div>
+        <div class="f-price">
+            <h3 class="flight-price"><?= $flight[7] ?>$</h3>
+        </div>
     </div>
-    <div class="f-info">
-        <h4 class="flight-info"><?= $flight[3] ?> - <?= $flight[4] ?>  </h4>
-    </div>
-    <div class="f-price">
-        <h3 class="flight-price"><?= $flight[7] ?>$</h3>
-    </div>
-</div>
-</a>
+    </a>
+</li>
 
 <?php
     $counter++;
 }
 ?>
+    
+</ul>

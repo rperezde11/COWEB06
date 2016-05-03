@@ -1,5 +1,5 @@
 document.observe("dom:loaded",function(){
-    
+
     loadFlights();
     
     $('city-filter-button').onclick = function() {
@@ -9,7 +9,6 @@ document.observe("dom:loaded",function(){
 });
 
 // AJAX FUNCTIONS
-
 function loadFlights() {
     new Ajax.Request("flights-results.php",{
         method:"get",
@@ -20,14 +19,21 @@ function loadFlights() {
             $('my-flights-container').innerHTML = "";
             $('my-flights-container').innerHTML = e.responseText;
             
-            $$('.flight-preview').each(function(element){
-                element.onmouseover = function(){
-                    new Effect.Opacity(element,{duration:1.5,to:0.7,from:1.0});
-                }
-                element.onmouseout = function(){
-                    new Effect.Opacity(element,{duration:0.7,to:1.0,from:0.7});
-                }
-    });
+            jq('.flight-preview').mouseenter(function(){
+                jq(this).animate({opacity: 0.85}, 200);
+            });
+            
+            jq('.flight-preview').mouseleave(function(){
+                jq(this).animate({opacity: 1.00}, 300);
+            });
+            
+            jq('#sortable-flights').sortable(
+                                                {
+                                                    axis: 'y',
+                                                    opacity: 0.80,
+                                                    containment: '#my-flights-container'
+                                                }
+                                            );
         }
     });
 }

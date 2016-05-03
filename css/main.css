@@ -249,6 +249,7 @@ div.prof-info {
     cursor:pointer;
     border:1px solid #000;
     font-size:11px;
+    margin: 0 auto;
 }
 
 .suggestion-item:hover{
@@ -281,6 +282,7 @@ div.prof-info {
 .hnav-list-wrapper{
     position: absolute;
     width: 25%;
+    margin-top: -3px;
 }
 
 .invisible{

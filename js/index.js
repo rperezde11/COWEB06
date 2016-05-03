@@ -1,21 +1,13 @@
 // EFFECTS
 document.observe("dom:loaded",function(){ 
     
-    $("search-index").onmouseover = function(){
-        new Effect.Scale(this,110,{scaleFromCenter:true,duration:0.01});
-    };
+    jq("#search-index").mouseenter(function(){
+        jq(this).animate({width: "+=20px", height: "+=5px"}, 300, 'easeOutBack');
+    });
     
-    $("search-index").onmouseout = function(){
-        new Effect.Scale(this,90.5,{scaleFromCenter:true,duration:0.01});
-    };
-    
-     $("search-index").onclick = function(){
-        new Effect.MoveBy(this,{x:10,y:10,duration:2});
-    };
-    
-    $("search-index").onclick = function(){
-        new Effect.MoveBy(this,{x:10,y:10,duration:2});
-    };
+    jq("#search-index").mouseleave(function(){
+        jq(this).animate({width: "-=20px", height: "-=5px"}, 100, 'easeOutBack');
+    });
     
     $("country-departure").onkeyup = function(){updateSuggestions($(this))};
     $("country-arrival").onkeyup = function(){updateSuggestions($(this))};

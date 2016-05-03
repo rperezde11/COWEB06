@@ -19,27 +19,32 @@
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Departure</h4>
                         <p class="field-header-dark">Country</p>
-                        <div id="departure">
+                        <div id="departure" class="input-wrapper">
                             <input id="country-departure" class="general-input" type="text" placeholder="BCN..." name="departure-country" autocomplete="off">
                             <div id="suggestion-dep"></div>
                         </div>
                         <p class="field-header-dark">Date</p>
-                        <input class="general-input" type="date" required="required" name="departure-date">
+                        <div class="input-wrapper">
+                            <input class="general-input" type="date" name="departure-date">
+                        </div>
                     </div>
                     <br/><br/>
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Arrival</h4>
                         <p class="field-header-dark">Country</p>
-                        <div id="arrival">
+                        <div id="arrival"  class="input-wrapper">
                             <input id="country-arrival" class="general-input" type="text" placeholder="Moscow..." name="arrival-country" autocomplete="off">
                             <div id="suggestion-arr"></div>
                         </div>
                         <p class="field-header-dark">Date</p>
-                        <input class="general-input" type="date" required="required" name="arrival-date">
-                        
+                        <div class="input-wrapper">
+                            <input class="general-input" type="date" name="arrival-date">
+                        </div>
                         <br/><br/><br/><br/>
                         
-                        <input id="search-index" class="dark-submit" type="submit" value="submit">
+                        <div class="input-wrapper">
+                            <input id="search-index" class="dark-submit" type="submit" value="submit">
+                        </div>
                         
                     </div>
                 

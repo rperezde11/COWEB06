@@ -60,6 +60,10 @@ a:-webkit-any-link{
     
 }
 
+.input-wrapper {
+    text-align: center;
+}
+
 #prom{
     width: 100%;
     height: 90%;
