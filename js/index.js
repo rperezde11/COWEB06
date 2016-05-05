@@ -14,21 +14,30 @@ document.observe("dom:loaded",function(){
     
     new Effect.Opacity($("prom-img"),{duration:8,from:1.0,to:0.3});
     
+    
+    // effect of the plane on submit
+    jq("#search-field").click(function(){
+        jq(this).after("<div id='plane-animation' style='height: 50px; width: 50px; background-image: url(imgs/airplane.png); background-size: cover; position: relative; z-index: 1;'></div>");
+        jq("#plane-animation").animate({opacity: 0.0, top: "-=250",left: jq(window).width()-(50+250), width: "+=250", height: "+=250"}, 2500, "easeInCubic", function(){
+            jq('.flights-table').rotate({
+                angle: 0,
+                animateTo: 280,
+                duration: 2000,
+                callback: function() {
+                    jq('#search-flights-form').submit();
+                }
+            });
+        });
+    });
+    
 });
 
 function updateSuggestions(elem){
     
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function(){
-        
-        if(xhttp.readyState==4 && xhttp.status==200){
-            elem.next().innerHTML = "";
-            elem.next().insert(xhttp.responseText);
-        }
-    }
-    xhttp.open("GET","suggestion-country.php?q="+elem.value,true);
-    xhttp.send();
+    jq.get("suggestion-country.php",{ q: elem.value }).done(function(data, status, xhr) {
+        elem.next().innerHTML = "";
+        elem.next().insert(data);
+    });
 }
 
 

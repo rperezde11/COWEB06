@@ -15,7 +15,7 @@
                 
                 <h2 class="section-header-dark">Select your flight!</h2>
                 
-                <form action="results.php" method="get">
+                <form id="search-flights-form" action="results.php" method="get">
                     <div class="selection-node"> 
                         <h4 class="insection-header-dark">Departure</h4>
                         <p class="field-header-dark">Country</p>
@@ -40,15 +40,12 @@
                         <div class="input-wrapper">
                             <input class="general-input" type="date" name="arrival-date">
                         </div>
-                        <br/><br/><br/><br/>
-                        
-                        <div class="input-wrapper">
-                            <input id="search-index" class="dark-submit" type="submit" value="submit">
-                        </div>
-                        
                     </div>
-                
                 </form>
+                <div style="height: 60px;"></div>
+                <div id="search-field" class="input-wrapper">
+                    <button id="search-index" class="dark-submit">Fly away!</button>
+                </div>
                 
             </div>
         
@@ -56,43 +53,44 @@
                 <?php
                     $offers = DB::getOffers(4);
                 ?>
-                <h2 class="section-header-light">Offers you may like...</h2>
+                <div id="offers-header">Offers you may like</div>
                 <?php
                     foreach($offers as $offer) {
                         $flight = DB::getFlightById($offer);
                 ?>
                 <a href="booking.php?id=<?=$offer?>">
                     <table class="flights-table">
-                        <caption class="capt-light"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></caption>
-                        <tr>
-                            <th>Departure</th>
-                            <th>Time</th>
-                            <th>Arrival</th>
-                            <th>Time</th>
-                            <th>Duration</th>
-                            <th>Price</th>
-                        </tr>
-                        <tr>
-                            <td><?=$flight[3]?></td>
-                            <td>19:00</td>
-                            <td><?=$flight[4]?></td>
-                            <td>21:00</td>
-                            <td>2 hours</td>
-                            <td><?=$flight[7]?>$</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"><b>Total</b></td>
-                            <td><b>2:00 hours</b></td>
-                            <td><b><?=$flight[7]?>$</b></td>
-                        </tr>
-                        <tfoot>
+                        <thead>
                             <tr>
-                              <td colspan="6">&copy; eFlights 2016 - Spain</td>
+                                <th colspan="6"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></th>
                             </tr>
-                        </tfoot>
-    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Departure</th>
+                                <th>Time</th>
+                                <th>Arrival</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td><?=$flight[3]?></td>
+                                <td>19:00</td>
+                                <td><?=$flight[4]?></td>
+                                <td>21:00</td>
+                                <td>2 hours</td>
+                                <td><?=$flight[7]?>$</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><b>Total</b></td>
+                                <td><b>2:00 hours</b></td>
+                                <td><b><?=$flight[7]?>$</b></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </a>
+                <br/><br/>
                 <?php } ?>
                 <!--
                     <br/><br/><br/>

@@ -20,8 +20,8 @@
                 
 <div id="user-info">
 
-    <div id="user-name"><?=$fn?><a href="removing-zone.php"><img style="margin-left: 5px;" src="imgs/remove.png"/></a></div>
-
+    <div id="user-name"><?=$fn?><!--<a href="removing-zone.php"><img id="rmUsr" style="margin-left: 5px;" src="imgs/remove.png"/></a>--></div>
+    
     <div id="user-pic">
         <img id="profile-pic" src="imgs/profile.jpg">
     </div>

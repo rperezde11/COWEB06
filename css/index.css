@@ -12,11 +12,10 @@
     width: 40%;
     height: 1050px;
     float: left;
-    background: white;
+    background: #fe8;
     text-decoration: none;
     padding-left: 20%;
     padding-right: 20%;
-    
 }
 
 #prom-wrapper{
@@ -28,15 +27,46 @@
     
 }
 
+#offers-header {
+    background: #222;
+    border-radius: 50px;
+    color: dodgerblue;
+    margin: 5% 20%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 15px 0px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 2px 3px grey;
+    text-shadow: 0px 0px 3px dimgray;
+}
+
 #content-offers a:link table tr,
 #content-offers a:visited table tr,
 #content-offers a:active table tr {
-    
-    text-decoration: none; 
-    color: black;
-    border: 2px solid green;
-    border-radius: 10px;
-    
+    text-decoration: none;  
+}
+
+table.flights-table thead th {
+    border-radius: 10px 5px 0px 0px;
+    border-bottom: 2px solid black;
+}
+table.flights-table > thead {
+    background: #3f3f3f;
+    color: gold;
+    border: 2px solid black;
+}
+
+table.flights-table > tbody {
+    background: #7f7f7f;
+    color: white;
+    border: 2px solid black;
+}
+
+table.flights-table > tbody tr:first-child {
+    background: tomato;
+    color: white;
+    border-bottom: 1px dashed black;
 }
 
 a:-webkit-any-link{
@@ -45,12 +75,9 @@ a:-webkit-any-link{
 }
 
 #content-offers a table:hover {
-    
-    text-decoration: none;
-    color: inherit;
-    border: 2px solid purple;
-    border-radius: 10px;
-    
+    /*-webkit-box-shadow: 0px 0px 15px 45px #999;
+    -moz-box-shadow: 0px 0px 15px 45px #999;*/
+    box-shadow: 25px 0px 70px 12px #999, -25px 0px 70px 12px #999;
 }
 
 #prom img {
