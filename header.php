@@ -11,10 +11,11 @@
                                        great, Rome, New York, Paris, London ">
         <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
         <link rel="stylesheet" type="text/css" href="css/<?=$className?>.css" media="screen">
+        <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
         <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js" type="text/javascript"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript">var jq = $.noConflict();</script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">var jq = $.noConflict();</script>
         <script type="text/javascript" src="js/jQueryRotate.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>

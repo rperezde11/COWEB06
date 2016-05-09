@@ -30,6 +30,16 @@ document.observe("dom:loaded",function(){
         });
     });
     
+    jq('.slider-prices').slider({
+        range: true, 
+        min: 0,
+        max: 500,
+        values: [0,250],
+        change: function(event, ui){
+            console.log("asdfasdfasdf");
+        }
+    });
+    
     updateOffers(0, 500, 4);
     
 });
