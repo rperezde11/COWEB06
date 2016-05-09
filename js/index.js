@@ -35,8 +35,13 @@ document.observe("dom:loaded",function(){
         min: 0,
         max: 500,
         values: [0,250],
+        slide: function(event, ui){
+            jq('#slider-left-value').text(ui.values[0]+"\u20AC");
+            jq('#slider-right-value').text(ui.values[1]+"\u20AC");
+        },
         change: function(event, ui){
-            console.log("asdfasdfasdf");
+            jq('.offer').remove();
+            updateOffers(ui.values[0], ui.values[1], 4);
         }
     });
     
@@ -47,7 +52,6 @@ document.observe("dom:loaded",function(){
 function updateOffers (minimum, maximum, num) {
     jq.get("getOffers.php",{ min: minimum, max: maximum, n: num})
         .done(function(data, status, xhr) {
-            console.log(JSON.parse(data), status, xhr);
             var JSONObjs = JSON.parse(data);
             JSONObjs.each(function(elem){
                 createOffer(elem);
@@ -66,40 +70,38 @@ function updateSuggestions(elem){
 function createOffer (obj) {
     
      jq('#offer-data').append(
-         "<a href='booking.php?id="+obj.id+"'> \
-                    <table class='flights-table'> \
-                        <thead> \
-                            <tr> \
-                                <th colspan='6'>"+obj.dep+"("+obj.c_dep+") - "+obj.arr+" ("+obj.c_arr+")</th> \
-                            </tr> \
-                        </thead> \
-                        <tbody> \
-                            <tr> \
-                                <th>Departure</th> \
-                                <th>Time</th> \
-                                <th>Arrival</th> \
-                                <th>Time</th> \
-                                <th>Duration</th> \
-                                <th>Price</th> \
-                            </tr> \
-                            <tr> \
-                                <td>"+obj.dep+"</td> \
-                                <td>19:00</td> \
-                                <td>"+obj.arr+"</td> \
-                                <td>21:00</td> \
-                                <td>2 hours</td> \
-                                <td>"+obj.price+"&euro;</td> \
-                            </tr> \
-                            <tr> \
-                                <td colspan='4'><b>Total</b></td> \
-                                <td><b>2:00 hours</b></td> \
-                                <td><b>"+obj.price+"&euro;</b></td> \
-                            </tr> \
-                        </tbody> \
-                    </table> \
-                </a> \
-                <br/><br/> \
-        ");
+         "<a href='booking.php?id="+obj.id+"' class='offer'> \
+            <table class='flights-table'> \
+                <thead> \
+                    <tr> \
+                        <th colspan='6'>"+obj.dep+"("+obj.c_dep+") - "+obj.arr+" ("+obj.c_arr+")</th> \
+                    </tr> \
+                </thead> \
+                <tbody> \
+                    <tr> \
+                        <th>Departure</th> \
+                        <th>Time</th> \
+                        <th>Arrival</th> \
+                        <th>Time</th> \
+                        <th>Duration</th> \
+                        <th>Price</th> \
+                    </tr> \
+                    <tr> \
+                        <td>"+obj.dep+"</td> \
+                        <td>19:00</td> \
+                        <td>"+obj.arr+"</td> \
+                        <td>21:00</td> \
+                        <td>2 hours</td> \
+                        <td>"+obj.price+"&euro;</td> \
+                    </tr> \
+                    <tr> \
+                        <td colspan='4'><b>Total</b></td> \
+                        <td><b>2:00 hours</b></td> \
+                        <td><b>"+obj.price+"&euro;</b></td> \
+                    </tr> \
+                </tbody> \
+            </table><br><br> \
+        </a>");
     
 }
 
