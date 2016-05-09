@@ -48,7 +48,35 @@
                 </div>
                 
             </div>
-        
+            <div id="content-offers">
+                <div id="offer-data">
+                    <?php
+                        $offers = DB::getArrayJSONOffers(0, 250, 4);
+                        var_dump($offers);
+                    ?>
+                    <div id="offers-header">Offers you may like</div>
+                    
+                </div>
+                
+                <!-- OFFER MODIFIER -->
+                <div id="offer-modifier">
+                    <h2 class="section-header-dark">Modify offers!</h2>
+                    <hr/>
+                    <div class="selection-node">
+                        <br/><br/>
+                        <h4 class="insection-header-dark">Price Range</h4>
+                        <div class="slider-prices" ></div>
+                        <div class="slider-values">
+                            <div id="slider-left-value">0&euro;</div>
+                            <div id="slider-right-value">250&euro;</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+<?php include('footer.php'); ?>
+        <!--
             <div id="content-offers">
                 <?php
                     $offers = DB::getOffers(4);
@@ -92,9 +120,7 @@
                 </a>
                 <br/><br/>
                 <?php } ?>
-                <!--
+                
                     <br/><br/><br/>
-                -->
-            </div>
-
-<?php include('footer.php'); ?>
+                
+            </div> -->

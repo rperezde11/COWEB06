@@ -340,6 +340,22 @@ class DB
         $id = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN,0);
         return $id;
     }
+
+    function getArrayJSONOffers($min, $max, $num) {
+        
+        $db = DB::connect("eFlights");
+            
+        $sql = "
+        SELECT id, c_dep, c_arr, dep, arr, price 
+        FROM flights 
+        WHERE price BETWEEN $min AND $max 
+        ORDER BY price ASC 
+        LIMIT $num
+        ";
+        
+        $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
     
     function existsFlight($dep,$arrival,$depDate,$arrivalDate,$dbname="eFlights") {
         
