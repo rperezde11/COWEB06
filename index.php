@@ -52,7 +52,6 @@
                 <div id="offer-data">
                     <?php
                         $offers = DB::getArrayJSONOffers(0, 250, 4);
-                        var_dump($offers);
                     ?>
                     <div id="offers-header">Offers you may like</div>
                     
@@ -76,51 +75,3 @@
             </div>
 
 <?php include('footer.php'); ?>
-        <!--
-            <div id="content-offers">
-                <?php
-                    $offers = DB::getOffers(4);
-                ?>
-                <div id="offers-header">Offers you may like</div>
-                <?php
-                    foreach($offers as $offer) {
-                        $flight = DB::getFlightById($offer);
-                ?>
-                <a href="booking.php?id=<?=$offer?>">
-                    <table class="flights-table">
-                        <thead>
-                            <tr>
-                                <th colspan="6"><?=$flight[3]."(".$flight[1].") "?> - <?=" ".$flight[4]."(".$flight[2].")" ?></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Departure</th>
-                                <th>Time</th>
-                                <th>Arrival</th>
-                                <th>Time</th>
-                                <th>Duration</th>
-                                <th>Price</th>
-                            </tr>
-                            <tr>
-                                <td><?=$flight[3]?></td>
-                                <td>19:00</td>
-                                <td><?=$flight[4]?></td>
-                                <td>21:00</td>
-                                <td>2 hours</td>
-                                <td><?=$flight[7]?>$</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4"><b>Total</b></td>
-                                <td><b>2:00 hours</b></td>
-                                <td><b><?=$flight[7]?>$</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </a>
-                <br/><br/>
-                <?php } ?>
-                
-                    <br/><br/><br/>
-                
-            </div> -->

@@ -32,12 +32,59 @@ document.observe("dom:loaded",function(){
     
 });
 
+function updateOffers (minimum, maximum, num) {
+    jq.get("getOffer.php",{ min: minimum, max: maximum, n: num})
+        .done(function(data, status, xhr) {
+            console.log(data, status, xhr);
+    });
+}
+
 function updateSuggestions(elem){
     
     jq.get("suggestion-country.php",{ q: elem.value }).done(function(data, status, xhr) {
         elem.next().innerHTML = "";
         elem.next().insert(data);
     });
+}
+
+function createOffer (obj) {
+    
+     jq('#offer-data').append(
+         "<a href='booking.php?id="+obj[0]+"'> \
+                    <table class='flights-table'> \
+                        <thead> \
+                            <tr> \
+                                <th colspan='6'>"+obj[3]+"("+obj[1]+") - "+obj[4]+" ("+obj[2]+")</th> \
+                            </tr> \
+                        </thead> \
+                        <tbody> \
+                            <tr> \
+                                <th>Departure</th> \
+                                <th>Time</th> \
+                                <th>Arrival</th> \
+                                <th>Time</th> \
+                                <th>Duration</th> \
+                                <th>Price</th> \
+                            </tr> \
+                            <tr> \
+                                <td>"+obj[3]+"</td> \
+                                <td>19:00</td> \
+                                <td>"+obj[4]+"</td> \
+                                <td>21:00</td> \
+                                <td>2 hours</td> \
+                                <td>"+obj[5]+"&#euro;</td> \
+                            </tr> \
+                            <tr> \
+                                <td colspan='4'><b>Total</b></td> \
+                                <td><b>2:00 hours</b></td> \
+                                <td><b>"+obj[5]+"&#euro;</b></td> \
+                            </tr> \
+                        </tbody> \
+                    </table> \
+                </a> \
+                <br/><br/> \
+        ");
+    
 }
 
 

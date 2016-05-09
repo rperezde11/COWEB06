@@ -9,14 +9,52 @@
 
 #content-offers{
     
-    width: 40%;
+    width: 80%;
     height: 1050px;
     float: left;
-    background: #fe8;
+    background: #bbf;
     text-decoration: none;
-    padding-left: 20%;
-    padding-right: 20%;
 }
+
+#offer-data{
+    
+    width: 70%;
+    height: 100%;
+    float: left;
+    background: #bbf;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#offer-modifier{
+    
+    width: 20%;
+    height: 100%;
+    float: left;
+    background: blue;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.slider-prices {
+    
+}
+
+.slider-values {
+    
+}
+
+.slider-left-value {
+    
+}
+
+.slider-right-value {
+    
+}
+
+
 
 #prom-wrapper{
     
