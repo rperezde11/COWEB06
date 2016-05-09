@@ -23,6 +23,16 @@
     
 }
 
+#dialog-remove-user {
+    background-image: url(../imgs/warning.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.ui-dialog {
+    z-index: 1;
+}
+
 #user-pic{
     
     width: 100%;

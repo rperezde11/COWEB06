@@ -1,25 +1,26 @@
 jq(document).ready(function(){
     
-    var dialog = "<div id='dialog-remove-user' class='ui-dialog' title='Removing Account'><p>Are you sure you want to remove your user account?</p></div>";
+    var dialog = "<div id='dialog-remove-user' class='ui-dialog' style='display: none;' title='Removing Account'><p>Are you sure you want to remove your user account?</p></div>";
+    jq('body').append(dialog);
     
-    jq("#user-name").click(function(){
-        jq("#user-name").after(dialog);
-    });
-    
-    jq("#user-name").mouseleave(function(){
-        $( "#dialog-remove-user" ).dialog({
-            autoOpen: false,
-            height: 300,
-            width: 350,
+    jq("#rmUsr").click(function(){
+        jq( "#dialog-remove-user" ).dialog({
+            autoOpen: true,
+            height: 450,
+            width: 550,
             modal: true,
             buttons: [
                 {
-                    text: "Ok",
-                    click: function(){ console.log("clicked Ok.");}   
+                    text: "Yes",
+                    click: function(){
+                        window.location.href ='removing-zone.php';
+                    }   
                 },                         
                 {
-                    text: "O'right then, just get me outta here mate",
-                    click: function(){ console.log("clicked No.");}   
+                    text: "No",
+                    click: function(){ 
+                        jq( "#dialog-remove-user" ).dialog( "close" );
+                    }   
                 },
             ]
         });

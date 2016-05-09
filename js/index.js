@@ -1,6 +1,13 @@
 // EFFECTS
 document.observe("dom:loaded",function(){ 
     
+    var slider_init_values = [20, 300];
+    var isSearchAnimationActive = false;
+    
+    // disable search button
+    var searchButtonActive = false;
+    jq("#search-index").prop("disabled",!searchButtonActive);
+    
     jq("#search-index").mouseenter(function(){
         jq(this).animate({width: "+=20px", height: "+=5px"}, 300, 'easeOutBack');
     });
@@ -17,24 +24,27 @@ document.observe("dom:loaded",function(){
     
     // effect of the plane on submit
     jq("#search-field").click(function(){
-        jq(this).after("<div id='plane-animation' style='height: 50px; width: 50px; background-image: url(imgs/airplane.png); background-size: cover; position: relative; z-index: 1;'></div>");
-        jq("#plane-animation").animate({opacity: 0.0, top: "-=250",left: jq(window).width()-(50+250), width: "+=250", height: "+=250"}, 2500, "easeInCubic", function(){
-            jq('.flights-table').rotate({
-                angle: 0,
-                animateTo: 280,
-                duration: 2000,
-                callback: function() {
-                    jq('#search-flights-form').submit();
-                }
+        if(!isSearchAnimationActive){
+            isSearchAnimationActive ^= true;
+            jq(this).after("<div id='plane-animation' style='height: 50px; width: 50px; background-image: url(imgs/airplane.png); background-size: cover; position: relative; z-index: 1;'></div>");
+            jq("#plane-animation").animate({opacity: 0.0, top: "-=250",left: jq(window).width()-(50+250), width: "+=250", height: "+=250"}, 2500, "easeInCubic", function(){
+                jq('.flights-table').rotate({
+                    angle: 0,
+                    animateTo: 345,
+                    duration: 2000,
+                    callback: function() {
+                        jq('#search-flights-form').submit();
+                    }
+                });
             });
-        });
+        }
     });
     
     jq('.slider-prices').slider({
         range: true, 
         min: 0,
         max: 500,
-        values: [0,250],
+        values: slider_init_values,
         slide: function(event, ui){
             jq('#slider-left-value').text(ui.values[0]+"\u20AC");
             jq('#slider-right-value').text(ui.values[1]+"\u20AC");
@@ -42,10 +52,23 @@ document.observe("dom:loaded",function(){
         change: function(event, ui){
             jq('.offer').remove();
             updateOffers(ui.values[0], ui.values[1], 4);
+        },
+        create: function(event, ui){
+            updateOffers(slider_init_values[0], slider_init_values[1],  4);
+            jq('#slider-left-value').text(slider_init_values[0]+"\u20AC");
+            jq('#slider-right-value').text(slider_init_values[1]+"\u20AC");
         }
     });
     
-    updateOffers(0, 500, 4);
+    
+    // search form disablement button
+    jq('.general-input').change(function(){
+        searchButtonActive = true;
+        jq('.general-input').each(function(elem){
+            searchButtonActive &= (jq(this).val().length != 0);
+            jq("#search-index").prop("disabled",!searchButtonActive);
+        });
+    });
     
 });
 
@@ -74,7 +97,7 @@ function createOffer (obj) {
             <table class='flights-table'> \
                 <thead> \
                     <tr> \
-                        <th colspan='6'>"+obj.dep+"("+obj.c_dep+") - "+obj.arr+" ("+obj.c_arr+")</th> \
+                        <th colspan='6'>"+obj.dep+" ("+obj.c_dep+") - "+obj.arr+" ("+obj.c_arr+")</th> \
                     </tr> \
                 </thead> \
                 <tbody> \
