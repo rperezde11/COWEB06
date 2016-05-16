@@ -127,14 +127,6 @@ function validateCardNumber() {
 }
 
 
-function createTestUsers () {
-    jq.post("test-users.xml").done(function(data, status, xhr){
-        console.log(data);
-    });
-}
-
-
-
 // EFFECTS
 document.observe("dom:loaded",function(){ 
     

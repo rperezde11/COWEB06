@@ -348,15 +348,18 @@ class DB
         $db = DB::connect("eFlights");
             
         $sql = "
-            SELECT * FROM flights,bookings 
-                ON flights.id=bookings.id_flight
-                AND WHERE flights.id=$id
-        ";
+                SELECT 
+                    flights.id,
+                    flights.seats_left,
+                    (COUNT(DISTINCT users.id) + flights.seats_left) AS seats,
+                    (SUM(CASE WHEN (users.gender LIKE 'Female') THEN 1 ELSE 0 END)) AS female_ratio, 
+                    (SUM(CASE WHEN (users.gender LIKE 'Male') THEN 1 ELSE 0 END)) AS male_ratio
+                FROM flights JOIN bookings JOIN users
+                    ON flights.id=bookings.id_flight AND users.id=bookings.id_user
+                    WHERE flights.id=$id
+            ";
         
         $result = DB::query($db,$sql)->fetchAll(PDO::FETCH_ASSOC);
-        
-        var_dump($sql);
-        die();
         
         return $result;
     }
@@ -687,13 +690,13 @@ class DB
         $maxFlights = DB::numFlights();
         
         $numOfBookings = 100;
-        $numOffers = 50;
+        $numOffers = 8;
         
         $offers = DB::getOffers($numOffers);
         
         for($i=0; $i<$numOfBookings; $i++) {
             $rnd = rand(0,10); // Randomize giving a hand to the cheaper ones
-            if($rnd < 4) {
+            if($rnd <= 2) {
                 DB::createBooking(rand(1, $maxUsers),rand(1, $maxFlights));
             } else {
                 $rnd_aux = rand(0, $numOffers-1);

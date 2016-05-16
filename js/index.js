@@ -1,7 +1,7 @@
 // EFFECTS
 document.observe("dom:loaded",function(){ 
     
-    var slider_init_values = [20, 300];
+    var slider_init_values = [10, 300];
     var isSearchAnimationActive = false;
     
     // disable search button
@@ -85,16 +85,19 @@ function updateOffers (minimum, maximum, num) {
         jq('.flights-table').mouseenter(function(){
             var id = jq(this).attr('id');
             if(!jq('.sugg-flight-info').length){
+                /*
                 jq(this).parent().after(
                     " \
                         <div class='sugg-flight-info' id='"+id+"'> \
                             <table border='0'> \
-                                <tr><th>Average Age</th><th>Gender Ratio</th><th>Seats Left</th></tr> \
-                                <tr><td>34,5</td><td>35% F / 65% M</td><td> 10 / 200 </td></tr> \
+                                <tr><th colspan='2'>Gender Ratio</th><th>Seats Left</th></tr> \
+                                <tr><td>35% F</td><td>65% M</td><td> 10 / 200 </td></tr> \
                             </table> \
                         </div> \
                     "
-                );
+                );*/
+                
+                updateAdditionalFlightInfo(id);
             }
         });
         
@@ -114,10 +117,13 @@ function updateSuggestions(elem){
     });
 }
 
-function updateAdditionalFlightInfo () {
+function updateAdditionalFlightInfo (_id) {
     
-    jq.get("", {}).done(function(data, status, xhr){
+    jq.get("additionalInfo.php", {id: _id}).done(function(data, status, xhr){
         
+        var JSONObjs = JSON.parse(data);
+        
+        createSuggestion(JSONObjs);
     });
     
 }
@@ -161,12 +167,18 @@ function createOffer (obj) {
 }
 
 function createSuggestion (obj) {
+    var obj = obj[0];
+    var seats_taken = (200 - obj.seats_left);
+    
+    var male_ratio = Math.ceil(obj.male_ratio/seats_taken*100);
+    var female_ratio = Math.ceil(obj.female_ratio/seats_taken*100);
+    
     jq('#'+obj.id).parent().after(
         " \
-            <div class='sugg-flight-info' id='"+id+"'> \
+            <div class='sugg-flight-info' id='"+obj.id+"'> \
                 <table border='0'> \
-                    <tr><th>Average Age</th><th>Gender Ratio</th><th>Seats Left</th></tr> \
-                    <tr><td>34,5</td><td>35% F / 65% M</td><td> 10 / 200 </td></tr> \
+                    <tr><th colspan='2'>Gender Ratio</th><th>Seats Left</th></tr> \
+                    <tr><td>"+(isNaN(female_ratio) ? 0 : female_ratio)+"% F</td><td>"+ (isNaN(male_ratio) ? 0 : male_ratio) +"% M</td><td> "+obj.seats_left+" / "+obj.seats+" </td></tr> \
                 </table> \
             </div> \
         "
