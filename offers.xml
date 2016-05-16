@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <offer>
+        <country>Italy</country>
+        <city>Rome</city>
+        <description>Come see the wonders of the ancient Rome.</description>
+        <price>300</price>
+        <image>imgs/rome.jpg</image>
+    </offer>
+    <offer>
+        <country>Czech Republic</country>
+        <city>Prague</city>
+        <description>I know absolutely nothing of this city.</description>
+        <price>200</price>
+        <image>imgs/prague.jpg</image>
+    </offer>
+    <offer>
+        <country>Italy</country>
+        <city>Venice</city>
+        <description>The italian city of love is waiting for you.</description>
+        <price>400</price>
+        <image>imgs/venice.jpg</image>
+    </offer>
+    <offer>
+        <country>England</country>
+        <city>London</city>
+        <description>Where you can see that really big wheel and that useless clock near it.</description>
+        <price>600</price>
+        <image>imgs/london.jpg</image>
+    </offer>
+</users>

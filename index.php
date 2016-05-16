@@ -7,6 +7,9 @@
 ?>
             <div id="prom-wrapper">
                 <div id="prom">
+                    <h1 id="prom-title">Title</h1>
+                    <h4 id="prom-descr">This is the description</h4>
+                    <h2 id="prom-price">300&euro;</h2>
                     <img id="prom-img" src="imgs/rome.jpg" alt="Image of a place in the world.">
                 </div>
             </div>

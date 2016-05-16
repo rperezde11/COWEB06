@@ -185,17 +185,38 @@ function createSuggestion (obj) {
     );
 }
 
-var images = ["rome.jpg","prague.jpg","venice.jpg","london.jpg"];
+// Big Offers
+
+function getOffersXML(n) 
+{   
+    jq.get("offers.xml").done(function(xml){
+        var offer = xml.getElementsByTagName("offer")[n];
+        updateBigOffer(offer);
+    });
+}
+
+function updateBigOffer(offer) 
+{
+    var nodes = offer.childNodes;
+    console.log(nodes[3].innerHTML);
+    jq('#prom-title').html(nodes[3].innerHTML);
+    jq('#prom-descr').html('"'+nodes[5].innerHTML+'"');
+    jq('#prom-price').html(nodes[7].innerHTML + "\u20AC");
+    jq('#prom-img').attr('src', nodes[9].innerHTML);
+}
+
+//var images = ["rome.jpg","prague.jpg","venice.jpg","london.jpg"];
 var counter= 1;
 setInterval(function(){
-                $("prom-img").src = "imgs/"+images[counter]; 
-                if(counter<(images.length-1)){
+                //$("prom-img").src = "imgs/"+images[counter]; 
+                if(counter<3){
                     counter++;
                 } else {
                     counter=0;
                 }
+                getOffersXML(counter);
             },
-            10000);
+            5000);
 var fade = false;
 setInterval(function(){
                 if (fade) {

@@ -31,14 +31,51 @@
 .sugg-flight-info {
     height: 130px;
     width: 280px;
-    background: #fff;
-    border: 3px solid #333;
-    border-radius: 2px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
     position: absolute;
     margin-top: -270px;
     margin-left: -150px;
     font-size: 11px;
     text-align: center;
+    background-image: url('../imgs/plane-ticket.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div#prom > h1#prom-title {
+    position: absolute;
+    z-index: 1;
+    font-size: 10.5em;
+    color: gold;
+    text-shadow: 2px 2px #222;
+    font-weight: 500 !important;
+    -webkit-text-stroke: 1.5px #000000;
+    bottom: 5%;
+    left: 2%;
+}
+
+div#prom > h2#prom-price {
+    position: absolute;
+    z-index: 1;
+    font-size: 3.5em;
+    color: gold;
+    text-shadow: 2px 2px #222;
+    -webkit-text-stroke: 1.5px #000000;
+    top: 0%;
+    right: 2%;
+}
+
+div#prom > h4#prom-descr {
+    position: absolute;
+    z-index: 1;
+    font-size: 1.5em;
+    color: saddlebrown;
+    text-shadow: 2px 2px #111;
+    font-style: italic;
+    bottom: 0%;
+    left: 5%;
 }
 
 .sugg-flight-info table{
@@ -59,7 +96,6 @@
     font-style: italic;
     font-size: 12px;
 }
-
 
 #offer-modifier{
     
