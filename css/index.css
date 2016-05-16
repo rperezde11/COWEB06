@@ -28,6 +28,39 @@
     padding-right: 15%;
 }
 
+.sugg-flight-info {
+    height: 130px;
+    width: 280px;
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 2px;
+    position: absolute;
+    margin-top: -270px;
+    margin-left: -150px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.sugg-flight-info table{
+    border-collapse: collapse;
+    height: 60%;
+    width: 90%;
+    position: relative;
+    top: 20%;
+    left: 5%;
+}
+
+.sugg-flight-info th{
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.sugg-flight-info td{
+    font-style: italic;
+    font-size: 12px;
+}
+
+
 #offer-modifier{
     
     width: 20%;

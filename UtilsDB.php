@@ -615,15 +615,33 @@ class DB
     }
     
     function fillStartingUsers(){
-        DB::createUser("admin","admin","11111111A","admin@eflights.com",
-                        "admin","1990-01-01","Male","",
-                        "England","Manchester");
-        DB::createUser("test","test","11111111A","test@eflights.com",
-                        "test","1990-01-01","Male","",
-                        "England","London");
-        DB::createUser("Raul","Perez","47188116M","raulp_prat@hotmail.com",
-                        "12345678","1993-09-10","Male","",
-                        "Spain","Barcelona");
+        $doc = new DOMDocument();
+        $doc->load("test-users.xml");
+        $users = $doc->getElementsByTagName("user");
+        
+        foreach($users as $user){
+            $userData = array();
+            foreach($user->childNodes as $node){
+                if($node->nodeType !== 1){
+                    continue;
+                }
+                $userData[$node->tagName] = $node->nodeValue;
+            }
+            
+            DB::createUser(
+                $userData["name"], 
+                $userData["second-name"], 
+                $userData["identification"], 
+                $userData["email"],
+                $userData["password"], 
+                $userData["birthday"], 
+                $userData["gender"], 
+                $userData["description"],
+                $userData["country"],
+                $userData["city"]
+            );
+        }
+    
     }
     
     function createFlight($dep,$arrival,$dep_cc,$arr_cc,$depDate,$arrivalDate,$price,$left,$dbname="eFlights") {

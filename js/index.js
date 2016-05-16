@@ -79,6 +79,30 @@ function updateOffers (minimum, maximum, num) {
             JSONObjs.each(function(elem){
                 createOffer(elem);
             });
+        
+            
+        // Functions affecting offers
+        jq('.flights-table').mouseenter(function(){
+            var id = jq(this).attr('id');
+            if(!jq('.sugg-flight-info').length){
+                jq(this).parent().after(
+                    " \
+                        <div class='sugg-flight-info' id='"+id+"'> \
+                            <table border='0'> \
+                                <tr><th>Average Age</th><th>Gender Ratio</th><th>Seats Left</th></tr> \
+                                <tr><td>34,5</td><td>35% F / 65% M</td><td> 10 / 200 </td></tr> \
+                            </table> \
+                        </div> \
+                    "
+                );
+            }
+        });
+        
+                // Functions affecting offers
+        jq('.flights-table').mouseleave(function(){
+            jq('.sugg-flight-info').remove();
+        });
+        
     });
 }
 
@@ -90,11 +114,19 @@ function updateSuggestions(elem){
     });
 }
 
+function updateAdditionalFlightInfo () {
+    
+    jq.get("", {}).done(function(data, status, xhr){
+        
+    });
+    
+}
+
 function createOffer (obj) {
     
      jq('#offer-data').append(
          "<a href='booking.php?id="+obj.id+"' class='offer'> \
-            <table class='flights-table'> \
+            <table class='flights-table' id='"+obj.id+"'> \
                 <thead> \
                     <tr> \
                         <th colspan='6'>"+obj.dep+" ("+obj.c_dep+") - "+obj.arr+" ("+obj.c_arr+")</th> \
@@ -128,6 +160,18 @@ function createOffer (obj) {
     
 }
 
+function createSuggestion (obj) {
+    jq('#'+obj.id).parent().after(
+        " \
+            <div class='sugg-flight-info' id='"+id+"'> \
+                <table border='0'> \
+                    <tr><th>Average Age</th><th>Gender Ratio</th><th>Seats Left</th></tr> \
+                    <tr><td>34,5</td><td>35% F / 65% M</td><td> 10 / 200 </td></tr> \
+                </table> \
+            </div> \
+        "
+    );
+}
 
 var images = ["rome.jpg","prague.jpg","venice.jpg","london.jpg"];
 var counter= 1;

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user id='0'>
+        <name>Raul</name>
+        <second-name>Perez</second-name>
+        <email>raulp_prat@hotmail.com</email>
+        <password>123456</password>
+        <identification>11111111A</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Male</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>El Prat de Llobregat</city>
+        <country>Spain</country>
+    </user>
+    <user id='1'>
+        <name>Test</name>
+        <second-name>Test</second-name>
+        <email>test@test.com</email>
+        <password>123456</password>
+        <identification>11111110A</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Female</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>Nowhere</city>
+        <country>Everywhere</country>
+    </user>
+    <user id='2'>
+        <name>Test1</name>
+        <second-name>Test1</second-name>
+        <email>test1@test.com</email>
+        <password>123456</password>
+        <identification>11111111A</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Female</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>Nowhere</city>
+        <country>Everywhere</country>
+    </user>
+    <user id='3'>
+        <name>Test2</name>
+        <second-name>Test2</second-name>
+        <email>test2@test.com</email>
+        <password>123456</password>
+        <identification>11111112A</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Female</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>Nowhere</city>
+        <country>Everywhere</country>
+    </user>
+    <user id='4'>
+        <name>Test3</name>
+        <second-name>Test3</second-name>
+        <email>test3@test.com</email>
+        <password>123456</password>
+        <identification>11111113A</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Female</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>Nowhere</city>
+        <country>Everywhere</country>
+    </user>
+    <user id='5'>
+        <name>Alexia</name>
+        <second-name>Adrover</second-name>
+        <email>alexiaam89@gmail.com</email>
+        <password>123456</password>
+        <identification>38854345P</identification>
+        <birthday>15-03-1989</birthday>
+        <gender>Female</gender>
+        <description>A SDFASDFAS DFASDF ASDFASD FASDFASdf</description>
+        <city>El masnueve</city>
+        <country>Spain</country>
+    </user>
+    <user id='6'>
+        <name>Joan</name>
+        <second-name>Sospiedra</second-name>
+        <email>joan@gmail.com</email>
+        <password>joansospedra</password>
+        <identification>11111111J</identification>
+        <birthday>09-10-1993</birthday>
+        <gender>Female</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>El Prat de Llobregat</city>
+        <country>Spain</country>
+    </user>
+    <user id='7'>
+        <name>Albert</name>
+        <second-name>Castillo</second-name>
+        <email>alalabus@gmail.com</email>
+        <password>albertcastillo</password>
+        <identification>22222222A</identification>
+        <birthday>09-10-1992</birthday>
+        <gender>Male</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>El Prat de Llobregat</city>
+        <country>Spain</country>
+    </user>
+    <user id='8'>
+        <name>Luis</name>
+        <second-name>Primo</second-name>
+        <email>luisprimo@gmail.com</email>
+        <password>luisprimo</password>
+        <identification>33333333L</identification>
+        <birthday>09-10-1992</birthday>
+        <gender>Male</gender>
+        <description>Lorem Ipsumfa añsdfañskjfñaskdf.</description>
+        <city>El Prat de Llobregat</city>
+        <country>Spain</country>
+    </user>
+</users>
