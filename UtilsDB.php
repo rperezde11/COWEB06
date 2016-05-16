@@ -331,7 +331,8 @@ class DB
         return $cities;
     }
     
-    function getOffers($num){
+    function getOffers($num)
+    {
         
         $db = DB::connect("eFlights");
             
@@ -340,8 +341,28 @@ class DB
         $id = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN,0);
         return $id;
     }
+    
+    function getAdditionalInfoJSON($id) 
+    {
+        
+        $db = DB::connect("eFlights");
+            
+        $sql = "
+            SELECT * FROM flights,bookings 
+                ON flights.id=bookings.id_flight
+                AND WHERE flights.id=$id
+        ";
+        
+        $result = DB::query($db,$sql)->fetchAll(PDO::FETCH_ASSOC);
+        
+        var_dump($sql);
+        die();
+        
+        return $result;
+    }
 
-    function getArrayJSONOffers($min, $max, $num) {
+    function getArrayJSONOffers($min, $max, $num)
+    {
         
         $db = DB::connect("eFlights");
             
@@ -357,7 +378,8 @@ class DB
         return $res;
     }
     
-    function existsFlight($dep,$arrival,$depDate,$arrivalDate,$dbname="eFlights") {
+    function existsFlight($dep,$arrival,$depDate,$arrivalDate,$dbname="eFlights") 
+    {
         
         $db = DB::connect($dbname);
         $dep = $db->quote($dep);
@@ -379,7 +401,8 @@ class DB
         
     }
     
-    function getFlightsBetweenCountries($countryA, $countryB, $search=null){
+    function getFlightsBetweenCountries($countryA, $countryB, $search=null)
+    {
         
         $db = DB::connect("eFlights");
         
@@ -401,7 +424,8 @@ class DB
         return $res;
     }
     
-    function getFlightById($id){
+    function getFlightById($id)
+    {
         
         $db = DB::connect("eFlights");
         
@@ -410,7 +434,8 @@ class DB
         return DB::query($db,$sql)->fetch();
     }
     
-    function getPossibleCountries($name,$maxItems){
+    function getPossibleCountries($name,$maxItems)
+    {
         
         if($name==""){
             return array();
@@ -424,7 +449,8 @@ class DB
     }
     
     // Create Tables
-    function createCountriesTable() {
+    function createCountriesTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -444,7 +470,8 @@ class DB
 
     }
     
-    function createCitiesTable() {
+    function createCitiesTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -465,7 +492,8 @@ class DB
         }
     }
     
-    function createTableFlights() {
+    function createTableFlights() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -499,7 +527,8 @@ class DB
         }
     }
     
-    function createUsersTable() {
+    function createUsersTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -525,7 +554,8 @@ class DB
         }
     }    
     
-    function createBookingsTable() {
+    function createBookingsTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -545,7 +575,8 @@ class DB
         }
     }
     
-    function createEFlightsDB() {
+    function createEFlightsDB() 
+    {
         $db = DB::connect();
         
         $res = $db->query("SHOW DATABASES LIKE 'eFlights'")->fetchAll();
@@ -567,13 +598,15 @@ class DB
             DB::createUsersTable();
             DB::fillStartingUsers();
             DB::createBookingsTable();
+            DB::fillBookingsTable();
         }
         
     }
     
     
     // Fill Tables
-    function fillCitiesTable() {
+    function fillCitiesTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -595,7 +628,8 @@ class DB
         
     }
     
-    function fillCountriesTable() {
+    function fillCountriesTable() 
+    {
         
         $db = DB::connect("eFlights");
         
@@ -614,7 +648,8 @@ class DB
 
     }
     
-    function fillStartingUsers(){
+    function fillStartingUsers()
+    {
         $doc = new DOMDocument();
         $doc->load("test-users.xml");
         $users = $doc->getElementsByTagName("user");
@@ -642,6 +677,49 @@ class DB
             );
         }
     
+    }
+    
+    function fillBookingsTable()
+    {
+        $db = DB::connect("eFlights");
+        
+        $maxUsers = DB::numUsers();
+        $maxFlights = DB::numFlights();
+        
+        $numOfBookings = 100;
+        $numOffers = 50;
+        
+        $offers = DB::getOffers($numOffers);
+        
+        for($i=0; $i<$numOfBookings; $i++) {
+            $rnd = rand(0,10); // Randomize giving a hand to the cheaper ones
+            if($rnd < 4) {
+                DB::createBooking(rand(1, $maxUsers),rand(1, $maxFlights));
+            } else {
+                $rnd_aux = rand(0, $numOffers-1);
+                DB::createBooking(rand(1, $maxUsers),$offers[$rnd_aux]);
+            }
+        }
+    }
+    
+    function numUsers () 
+    {
+                
+        $db = DB::connect("eFlights");
+        
+        $sql = "SELECT COUNT(*) FROM users";
+        $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0];
+        return $res;
+    }
+    
+    function numFlights () 
+    {
+                
+        $db = DB::connect("eFlights");
+        
+        $sql = "SELECT COUNT(*) FROM flights";
+        $res = DB::query($db,$sql)->fetchAll(PDO::FETCH_COLUMN)[0];
+        return $res;
     }
     
     function createFlight($dep,$arrival,$dep_cc,$arr_cc,$depDate,$arrivalDate,$price,$left,$dbname="eFlights") {
