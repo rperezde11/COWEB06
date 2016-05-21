@@ -3,7 +3,7 @@ jq(document).ready(function(){
     var dialog = "<div id='dialog-remove-user' class='ui-dialog' style='display: none;' title='Removing Account'><p>Are you sure you want to remove your user account?</p></div>";
     jq('body').append(dialog);
     
-    jq("#rmUsr").click(function(){
+    jq("#usrRmv").click(function(){
         jq( "#dialog-remove-user" ).dialog({
             autoOpen: true,
             height: 450,
@@ -24,6 +24,10 @@ jq(document).ready(function(){
                 },
             ]
         });
+    });
+    
+    jq('#endSession').click(function(){
+        killSession(null);
     });
     
 });

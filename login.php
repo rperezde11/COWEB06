@@ -1,12 +1,18 @@
 <?php 
     $className = "login";
 
+    session_start();
+    if(isset($_SESSION['USER_ID'])){
+        header('Location: profile.php');
+    }
+
     include('header.php');
+    
 ?>
 
 <h2 class="section-header-light">Login</h2>
 <div id="login-box" class="light-shadow">  
-    <form id="form-login" action="validation.php" method="post">            
+    <form id="form-login" action="profile.php" method="post">            
         <p class="field-header-dark">E-mail</p>
         <input id="email-input" class="general-input val-input" type="text" placeholder="john.doe@gmail.com" required="required" name="email">
         <br/>

@@ -73,7 +73,7 @@ document.observe("dom:loaded",function(){
 });
 
 function updateOffers (minimum, maximum, num) {
-    jq.get("getOffers.php",{ min: minimum, max: maximum, n: num})
+    jq.get("ajax/AJAX-getOffers.php",{ min: minimum, max: maximum, n: num})
         .done(function(data, status, xhr) {
             var JSONObjs = JSON.parse(data);
             JSONObjs.each(function(elem){
@@ -84,19 +84,7 @@ function updateOffers (minimum, maximum, num) {
         // Functions affecting offers
         jq('.flights-table').mouseenter(function(){
             var id = jq(this).attr('id');
-            if(!jq('.sugg-flight-info').length){
-                /*
-                jq(this).parent().after(
-                    " \
-                        <div class='sugg-flight-info' id='"+id+"'> \
-                            <table border='0'> \
-                                <tr><th colspan='2'>Gender Ratio</th><th>Seats Left</th></tr> \
-                                <tr><td>35% F</td><td>65% M</td><td> 10 / 200 </td></tr> \
-                            </table> \
-                        </div> \
-                    "
-                );*/
-                
+            if(!jq('.sugg-flight-info').length){    
                 updateAdditionalFlightInfo(id);
             }
         });
@@ -111,7 +99,7 @@ function updateOffers (minimum, maximum, num) {
 
 function updateSuggestions(elem){
     
-    jq.get("suggestion-country.php",{ q: elem.value }).done(function(data, status, xhr) {
+    jq.get("ajax/AJAX-suggestionCountry.php",{ q: elem.value }).done(function(data, status, xhr) {
         elem.next().innerHTML = "";
         elem.next().insert(data);
     });
@@ -186,10 +174,9 @@ function createSuggestion (obj) {
 }
 
 // Big Offers
-
 function getOffersXML(n) 
 {   
-    jq.get("offers.xml").done(function(xml){
+    jq.get("xml/offers.xml").done(function(xml){
         var offer = xml.getElementsByTagName("offer")[n];
         updateBigOffer(offer);
     });
@@ -198,17 +185,15 @@ function getOffersXML(n)
 function updateBigOffer(offer) 
 {
     var nodes = offer.childNodes;
-    console.log(nodes[3].innerHTML);
     jq('#prom-title').html(nodes[3].innerHTML);
     jq('#prom-descr').html('"'+nodes[5].innerHTML+'"');
     jq('#prom-price').html(nodes[7].innerHTML + "\u20AC");
     jq('#prom-img').attr('src', nodes[9].innerHTML);
 }
 
-//var images = ["rome.jpg","prague.jpg","venice.jpg","london.jpg"];
-var counter= 1;
+var counter= 0;
+getOffersXML(0);
 setInterval(function(){
-                //$("prom-img").src = "imgs/"+images[counter]; 
                 if(counter<3){
                     counter++;
                 } else {
@@ -216,7 +201,7 @@ setInterval(function(){
                 }
                 getOffersXML(counter);
             },
-            5000);
+            10000);
 var fade = false;
 setInterval(function(){
                 if (fade) {

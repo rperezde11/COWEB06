@@ -53,5 +53,7 @@
         </div>
         
     </body>
+
+<?php $_SESSION['REFERER'] = $_SERVER['PHP_SELF']; ?>
     
 </html>

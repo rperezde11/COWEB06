@@ -11,8 +11,8 @@ function applySuggestion(item,to){
 
 <?php 
 
-include('UtilsDB.php');
-include('utils-form.php');
+include('../UtilsDB.php');
+include('../UtilsForm.php');
 
 $max = 4;
 

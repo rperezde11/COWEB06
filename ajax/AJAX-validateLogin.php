@@ -1,7 +1,7 @@
 <?php 
 
-include('UtilsDB.php');
-include('utils-form.php');
+include('../UtilsDB.php');
+include('../UtilsForm.php');
 
 $email = UtilsForm::getParam('email');
 $password = UtilsForm::getParam('password');

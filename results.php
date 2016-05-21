@@ -1,15 +1,21 @@
 <?php
-
-    $className = 'results';
-    include('header.php');
-    include('UtilsDB.php');
-    include('utils-form.php');
-    include('mock.php');
     
+    include('UtilsDB.php');
+    include('UtilsForm.php');
+
     $depCountry = UtilsForm::getGetParam('departure-country');
     $depDate = UtilsForm::getGetParam('departure-date');
     $arrCountry = UtilsForm::getGetParam('arrival-country');
     $arrDate = UtilsForm::getGetParam('arrival-date');
+
+    if(!$depCountry and !$depDate and !$arrCountry and !$arrDate){
+        header("HTTP/1.1 410 Invalid Request");
+        header("Location: error.php?e=410");
+        exit();
+    }
+
+    $className = 'results';
+    include('header.php');
 ?>
 
 <h2 class="section-header-light">Results</h2>

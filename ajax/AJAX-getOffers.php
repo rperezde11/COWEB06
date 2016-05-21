@@ -1,7 +1,7 @@
 <?php
 
-include('UtilsDB.php');
-include('utils-form.php');
+include('../UtilsDB.php');
+include('../UtilsForm.php');
 
 $min = UtilsForm::getParam("min");
 $max = UtilsForm::getParam("max");

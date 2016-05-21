@@ -654,7 +654,7 @@ class DB
     function fillStartingUsers()
     {
         $doc = new DOMDocument();
-        $doc->load("test-users.xml");
+        $doc->load("xml/test-users.xml");
         $users = $doc->getElementsByTagName("user");
         
         foreach($users as $user){

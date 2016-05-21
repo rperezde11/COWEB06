@@ -126,6 +126,23 @@ function validateCardNumber() {
     }
 }
 
+// SESSIONS
+
+function killSession(page) {
+
+    if(page === null){
+        page = "index.php";    
+    }
+
+    jq.get("ajax/AJAX-session.php", {start: false}).done(function(data, status, xhr){
+        window.location.href = page;
+    });
+}
+
+function startSession() {
+    jq.get("ajax/AJAX-session.php", {start: true}).done();
+}
+
 
 // EFFECTS
 document.observe("dom:loaded",function(){ 

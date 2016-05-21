@@ -1,6 +1,6 @@
 <?php 
 
-    include('utils-form.php');
+    include('UtilsForm.php');
     include('validateForm.php');
     include('UtilsDB.php');
 
@@ -34,7 +34,8 @@
         $id = DB::getUser($email);
 
         if ($valid) {
-            setcookie("user_id", $id, time() + 86400); // 1 day
+            session_start();
+            setcookie("ID", $id, time() + 86400); // 1 day
             header("Location: profile.php");
         } else {
             header('Location: login.php');

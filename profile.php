@@ -1,13 +1,13 @@
 <?php
-    include('utils-form.php');
+    include('UtilsForm.php');
     include('validateForm.php');
     include('UtilsDB.php');
 
     $className = "profile";
     include('header.php');
     
-    if(isset($_COOKIE["user_id"])){
-        $e = $_COOKIE["user_id"];    
+    if(isset($_SESSION['USER_ID'])){
+        $e = $_SESSION['USER_ID'];    
     } else {
         header('Location: index.php');
     }
@@ -20,7 +20,7 @@
                 
 <div id="user-info">
 
-    <div id="user-name"><?=$fn?><img id="rmUsr" style="margin-left: 5px;" src="imgs/remove.png"/></div>
+    <div id="user-name"><?=$fn?><img id="endSession" style="margin-left: 5px;" src="imgs/remove.png"/></div>
     
     <div id="user-pic">
         <img id="profile-pic" src="imgs/profile.jpg">
@@ -44,6 +44,7 @@
                 <?= UtilsForm::sec($city)." (".UtilsForm::sec($country).")"  ?>
             </em>
         </p>
+        <button id="usrRmv">Remove my account!</button>
     </div>
 
 </div>

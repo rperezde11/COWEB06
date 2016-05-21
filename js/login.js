@@ -1,6 +1,8 @@
 document.observe("dom:loaded",function(){
     
-    $("submit-login").onclick = function(){userValid();}
+    $("submit-login").onclick = function(){
+        userValid( $('email-input').value, $('password-input').value );
+    }
     $$('.val-input').each(function(elem){
         elem.onclick = function(){
             $$('.error-msg').each(function(e){e.remove();});
@@ -9,15 +11,18 @@ document.observe("dom:loaded",function(){
 });
 
 // AJAX FUNCTIONS
-function userValid() {
-    new Ajax.Request("validate-login.php",{
+function userValid(email, pass) {
+    new Ajax.Request("ajax/AJAX-validateLogin.php",{
         method:"post",
-        parameters:"email="+$('email-input').value+"&password="+$('password-input').value,
+        parameters:"email="+email+"&password="+pass,
         asynchronous: true,
         onComplete: 
         function(e){
             if(e.responseText == "1"){
-                $("form-login").submit();
+                jq.get('ajax/AJAX-handleLogin.php', {email: email}).done(function(data){
+                    console.log(data);
+                    $("form-login").submit();
+                });
             } else {
                 if($('login-error') == undefined) {
                     $("password-input").insert({after:"<p id='login-error' class='error-msg' style='color:red'>Sorry, Invalid Log in...</p>"});

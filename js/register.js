@@ -57,6 +57,6 @@ function userExistsInDB(){
         }
     }
     
-    xhttp.open("GET","user-validation.php?email="+$("email").value,true);
+    xhttp.open("GET","ajax/AJAX-userValidation.php?email="+$("email").value,true);
     xhttp.send();
 }
