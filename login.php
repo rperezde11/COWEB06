@@ -1,9 +1,10 @@
 <?php 
     $className = "login";
 
-    session_start();
-    if(isset($_SESSION['USER_ID'])){
-        header('Location: profile.php');
+    include('session.php');
+    
+    if($isUserLogged){
+        header('Location: profile.php');    
     }
 
     include('header.php');

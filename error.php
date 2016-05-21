@@ -1,6 +1,7 @@
 <?php
 
     $className = "error";
+    include('session.php');
     include('header.php');
 ?>
 

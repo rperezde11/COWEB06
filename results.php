@@ -2,6 +2,7 @@
     
     include('UtilsDB.php');
     include('UtilsForm.php');
+    include('session.php');
 
     $depCountry = UtilsForm::getGetParam('departure-country');
     $depDate = UtilsForm::getGetParam('departure-date');

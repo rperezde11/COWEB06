@@ -1,18 +1,19 @@
 <?php
-    $className = "booking-result";
-
-    include('header.php');
+    include('session.php');
     include('validateForm.php');
     include('UtilsForm.php');
     include('utilsDB.php');
 
     $flight_id = UtilsForm::getPostParam('flight_id');
     $flight = DB::getFlightById($flight_id);
-    if(isset($_COOKIE["user_id"])){
-        $user_id = $_COOKIE["user_id"];
+    if($isUserLogged){
+        $user_id = $_SESSION["USER_ID"];
     } else {
         header('Location: index.php');
     }
+
+    $className = "booking-result";
+    include('header.php');
 ?>
 
 <h2 class="section-header-light">Flight Booking</h2>

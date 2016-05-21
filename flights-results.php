@@ -1,7 +1,7 @@
 <?php
 
 include('UtilsDB.php');
-include('utils-form.php');
+include('UtilsForm.php');
 
 $countryA = UtilsForm::getGetParam('countryA');
 $countryB = UtilsForm::getGetParam('countryB');

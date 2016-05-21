@@ -1,5 +1,6 @@
 <?php 
     $className = "index";
+    include('session.php');
     include('header.php');
     include('UtilsDB.php');
 

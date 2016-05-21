@@ -4,13 +4,15 @@
     include('UtilsDB.php');
 
     $className = "profile";
-    include('header.php');
+    include('session.php');
     
-    if(isset($_SESSION['USER_ID'])){
+    if($isUserLogged){
         $e = $_SESSION['USER_ID'];    
     } else {
         header('Location: index.php');
     }
+
+    include('header.php');
     
 
     list($fn,$email,$password,$sn,$id,$birth,$gender,$description,$city,$country) = DB::getUserById($e);

@@ -1,6 +1,7 @@
 <?php 
     $className = "booking";
 
+    include('session.php');
     include('header.php');
     include('UtilsForm.php');
     include('utilsDB.php');
