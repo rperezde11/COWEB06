@@ -9,7 +9,7 @@
     $arrDate = UtilsForm::getGetParam('arrival-date');
 
     if(!$depCountry and !$depDate and !$arrCountry and !$arrDate){
-        header("HTTP/1.1 403 Forbidden");
+        header("HTTP/1.1 400 Bad Request");
     }
 
     include('session.php');
