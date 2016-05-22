@@ -2,7 +2,6 @@
     
     include('UtilsDB.php');
     include('UtilsForm.php');
-    include('session.php');
 
     $depCountry = UtilsForm::getGetParam('departure-country');
     $depDate = UtilsForm::getGetParam('departure-date');
@@ -10,10 +9,10 @@
     $arrDate = UtilsForm::getGetParam('arrival-date');
 
     if(!$depCountry and !$depDate and !$arrCountry and !$arrDate){
-        header("HTTP/1.1 410 Invalid Request");
-        header("Location: error.php?e=410");
-        exit();
+        header("HTTP/1.1 403 Forbidden");
     }
+
+    include('session.php');
 
     $className = 'results';
     include('header.php');

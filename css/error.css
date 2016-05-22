@@ -1,8 +1,8 @@
 #error-wrapper{
     
-    width: 65%;
-    height: 90%;
-    position: absolute;
+    width: 90%;
+    position: relative;
+    margin: auto 0;
     left:5%;
     top: 18%;
     
@@ -10,19 +10,24 @@
 
 #error-num{
     
-    text-align: center;
     font-size: 25em;
-    margin: 10px auto 20px auto;
     color: #555;
     text-shadow: 3px 3px grey;
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
-#error-text{
+#error-text > b{
 
-    margin-left: 30%;
     color: #222;
-    font-size: 20px;
+    font-size: 5em;
+    
+}
+
+#error-text > em{
+
+    color: #555;
+    font-size: 2em;
     
 }

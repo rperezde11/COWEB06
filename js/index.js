@@ -107,7 +107,7 @@ function updateSuggestions(elem){
 
 function updateAdditionalFlightInfo (_id) {
     
-    jq.get("additionalInfo.php", {id: _id}).done(function(data, status, xhr){
+    jq.get("ajax/AJAX-additionalInfo.php", {id: _id}).done(function(data, status, xhr){
         
         var JSONObjs = JSON.parse(data);
         

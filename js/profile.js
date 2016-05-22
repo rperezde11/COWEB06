@@ -13,7 +13,11 @@ jq(document).ready(function(){
                 {
                     text: "Yes",
                     click: function(){
-                        window.location.href ='removing-zone.php';
+                        jq.get("ajax/AJAX-removingZone.php").done(function(data,status, xhr){
+                            if(data == "OK"){
+                                window.location.href = "index.php";
+                            }
+                        });
                     }   
                 },                         
                 {
@@ -26,8 +30,8 @@ jq(document).ready(function(){
         });
     });
     
-    jq('#endSession').click(function(){
-        killSession(null);
-    });
+    //jq('#endSession').click(function(){
+    //    killSession(null);
+    //});
     
 });
