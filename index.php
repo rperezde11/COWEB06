@@ -1,6 +1,7 @@
 <?php 
-    $className = "index";
     include('session.php');
+
+    $className = "index";
     include('header.php');
     include('UtilsDB.php');
 
@@ -73,6 +74,12 @@
                             <div id="slider-left-value">0&euro;</div>
                             <div id="slider-right-value">250&euro;</div>
                         </div>
+                        <?php if($isUserLogged) { ?>
+                        <div class="checkbox">
+                            <input id="checkbox-offer" type="checkbox">
+                            <label for="checkbox-offer"><span style="color: gold; font-weight: bolder;">Include your favourite flights!</span></label>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 

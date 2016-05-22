@@ -12,6 +12,12 @@
         header('Location: index.php');
     }
 
+    if(isset($_SESSION['REMEMBER'])){
+        if($_SESSION['REMEMBER'] == "true"){
+            setcookie("ZXVF", $_COOKIE['PHPSESSID'], time()+60*60*24*7);            
+        }
+    }
+
     include('header.php');
     
 

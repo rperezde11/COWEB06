@@ -28,6 +28,11 @@
     padding-right: 15%;
 }
 
+.checkbox{
+    display: block;
+    margin-top: 50%;
+}
+
 .sugg-flight-info {
     height: 130px;
     width: 280px;

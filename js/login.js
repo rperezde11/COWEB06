@@ -19,8 +19,10 @@ function userValid(email, pass) {
         onComplete: 
         function(e){
             if(e.responseText == "1"){
-                jq.get('ajax/AJAX-handleLogin.php', {email: email}).done(function(data){
-                    console.log(data);
+                jq.get('ajax/AJAX-handleLogin.php', {
+                    email: email,
+                    remember: jq('#checkbox-remember').prop("checked")
+                }).done(function(data){
                     $("form-login").submit();
                 });
             } else {

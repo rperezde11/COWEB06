@@ -2,7 +2,7 @@
     $className = "login";
 
     include('session.php');
-    
+
     if($isUserLogged){
         header('Location: profile.php');    
     }
@@ -19,6 +19,8 @@
         <br/>
         <p class="field-header-dark">Password</p>
         <input id="password-input" class="general-input val-input" type="password" required="required" name="password">
+        <input id="checkbox-remember" type="checkbox" name="remember">
+        <label for="checkbox-remember"><span style="color: gold; font-weight: bolder;">Remember me!</span></label>
     </form>
     <br/><br/>
     <button id="submit-login" class="dark-submit">Login</button>
