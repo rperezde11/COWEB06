@@ -33,14 +33,23 @@
                 </a>
             </div>
             
+            <?php if(!$isUserLogged){?>
             <div id="header-prof">
                 <a href="login.php">
-                    <img class="profile-pic" src="imgs/avatar.png">
+                    <div class="prof-info">Log In |</div>
                 </a>
-                <a href="register.html">
+                <a href="register.php">
                     <div class="prof-info">Register</div>
                 </a>
             </div>
+            <?php } else { ?>
+            <div id="header-prof">
+                <a href="profile.php">
+                    <img class="profile-pic" src="imgs/avatar.png">
+                </a>
+            </div>
+            <?php } ?>
+
             
             <div id="header-nav">
                 <ul>

@@ -1,54 +1,8 @@
-<!DOCTYPE html>
-
-<html>
-    
-    <head>
-        <title>eFlights</title>
-        <meta name="author" content="krakosky">
-        <meta name="description" content="Where flights are born">
-        <meta name="keywords" content="cheap, flights, flight, non-expensive, 
-                                       travel, enjoy, good, fine, wonderful,
-                                       great, Rome, New York, Paris, London ">
-        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="css/register.css" media="screen">
-        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/register.js"></script>
-    </head>
-    
-    <body>
-        
-        <div id="header">
-            
-            <div id="header-logo">
-                <a href="index.php">
-                    <img src="imgs/logo.png" alt="Logo of the website." >
-                </a>
-            </div>
-            
-            <div id="header-prof">
-                <a href="login.php">
-                    <img class="profile-pic" src="imgs/avatar.png">
-                </a>
-                <a href="register.html">
-                    <div class="prof-info">Register</div>
-                </a>
-            </div>
-            
-            <div id="header-nav">
-                <ul>
-                    <li><a href="#"><div class="hnav-elem">Book a flight<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Modify your booking<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Help & FAQ<span class="hnav-image"></span></div></a></li><!--
-                    --><li><a href="#"><div class="hnav-elem">Contact Us<span class="hnav-image"></span></div></a></li><!--
-                    -->
-                </ul>
-            </div>
-            
-        </div>
-        
-        <div id="content">
+<?php 
+    $className = "register";
+    include('session.php');
+    include('header.php');
+?>
             
             <div id="wrapper">
                 
@@ -120,61 +74,4 @@
 
             </div>
             
-        </div>
-            
-        
-        
-        <!--
-            FOOTER
-        -->
-        
-        <div id="footer">
-            <div class="footer-div left">
-                <ul> <b>Things you need to be able to travel.</b>
-                    <br/><br/>
-                    <li><em>A 35x50x20 bag.</em></li>
-                    <li><em>Don't take water.</em></li>
-                    <li><em>Be in the airport 2 hours before</em></li>
-                    <li><em>Don't be suspicious.</em></li>
-                </ul>
-            </div>
-            <div class="footer-div middle">
-                <ol> <b>Steps to be book a flight.</b>
-                    <br/><br/>
-                    <li><em>Fill the form in the index.</em></li>
-                    <li><em>Choose the flight that suits you the best.</em></li>
-                    <li><em>Fill the information needed.</em></li>
-                    <li><em>Submit the information</em></li>
-                </ol>
-            </div>
-            <div class="footer-div middle">
-                <dl> <b>You can contact us by:</b>
-                    <br/><br/>
-                    <dt><b>Phone</b></dt>
-                    <dd><em>933984576</em></dd>
-                    <dd><em>933984577</em></dd>
-                    <dd><em>933984578</em></dd>
-                    <dt><b>Mail</b></dt>
-                    <dd><em>foo@bar.com</em></dd>
-                    <dd><em>aux@hotmail.com</em></dd>
-                    <dt><b>Fax</b></dt>
-                    <dd><em>933984999</em></dd>
-                    <dt><b>Smoke Signals</b></dt>
-                    <dd><em>C. 90d 65m 45s</em></dd>
-                    <dd><em>C. 180d 3m 15s</em></dd>
-                    
-                </dl>
-            </div>
-            <div class="footer-div right">
-                <ul> <b>Other sites you may be interested in:</b>
-                    <br/><br/>
-                    <li><a href="http://www.iberia.es"> Iberia's website </a></li>
-                    <li><a href="http://www.edreams.com"> Edream's website </a></li>
-                    <li><a href="http://www.vueling.es"> Vueling's website </a></li>
-                </ul>
-            </div>
-        </div>
-        
-    </body>
-    
-</html>
+<?php include('footer.php'); ?>

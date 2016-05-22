@@ -20,13 +20,16 @@
 
 #header-prof{
     
-    width: 120px;
+    width: 10%;
     height:40px;
     position: absolute;
     top: 40%;
     right: 20px;
     transform: translateY(-50%);
-    
+    color: whitesmoke;
+    text-shadow: 0px 0px 26px #fff;
+    font-weight: bolder;
+    font-size: 1.0em;
 }
 
 #header-nav{
@@ -230,10 +233,9 @@ div.prof-info {
     width: 80px;
     height: 100%;
     float: left;
-    font-size: 10px;
-    color: white;
     line-height: 40px;
-    
+    display: inline;
+    color: whitesmoke;
 }
 
 /*****************************************************

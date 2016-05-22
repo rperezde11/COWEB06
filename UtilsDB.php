@@ -434,7 +434,13 @@ class DB
         
         $sql = "SELECT * FROM flights WHERE id=$id";
         
-        return DB::query($db,$sql)->fetch();
+        $res = DB::query($db,$sql);
+        
+        if($res == null){
+            return null;
+        }
+        
+        return $res->fetch();
     }
     
     function getPossibleCountries($name,$maxItems)

@@ -2,14 +2,20 @@
     include('session.php');
     include('validateForm.php');
     include('UtilsForm.php');
-    include('utilsDB.php');
+    include('UtilsDB.php');
 
-    $flight_id = UtilsForm::getPostParam('flight_id');
-    $flight = DB::getFlightById($flight_id);
     if($isUserLogged){
+        
         $user_id = $_SESSION["USER_ID"];
+        $flight_id = UtilsForm::getPostParam('flight_id');
+        
+        if($flight_id == null) {
+            header('Location: index.php');
+        }
+        $flight = DB::getFlightById($flight_id);
+        
     } else {
-        header('Location: index.php');
+        header("HTTP/1.1 403 Forbidden");
     }
 
     $className = "booking-result";

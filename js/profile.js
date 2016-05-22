@@ -30,8 +30,8 @@ jq(document).ready(function(){
         });
     });
     
-    //jq('#endSession').click(function(){
-    //    killSession(null);
-    //});
+    jq('#endSession').click(function(){
+        killSession(null);
+    });
     
 });

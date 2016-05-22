@@ -24,9 +24,12 @@
 
     <div id="wrapper">
 
-    <h1 class="light-main-title">Book the flight</h1>
-
+    <h1 class="light-main-title">Book this flight</h1>
+        
     <hr/><br/>
+    
+    <?php if($isUserLogged) { ?>
+
 
     <form id="booking-form" name="booking" action="booking-result.php" method="post">
 
@@ -84,6 +87,17 @@
         <input class="dark-submit" type="submit" value="Book this flight!">
 
     </form>
+        
+    <?php } else { ?>
+        <em style="display: block;">In order to be able to book a flight you must be Logged In</em>
+        <br/>
+        <form action="login.php">
+            <input class="dark-submit login" type="submit" value="Log In">
+        </form>
+        <form action="register.php">
+            <input class="dark-submit register" type="submit" value="Register">
+        </form>
+     <?php } ?>
 
     </div>
 
