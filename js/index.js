@@ -80,6 +80,7 @@ function updateOffers (minimum, maximum, num) {
     jq.get("ajax/AJAX-getOffers.php",{ min: minimum, max: maximum, n: num})
         .done(function(data, status, xhr) {
             var JSONObjs = JSON.parse(data);
+            console.log(data);
             JSONObjs.each(function(elem){
                 createOffer(elem);
             });

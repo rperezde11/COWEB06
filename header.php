@@ -1,3 +1,5 @@
+<?php include('handleErrors.php'); ?>
+
 <!DOCTYPE html>
 
 <html>

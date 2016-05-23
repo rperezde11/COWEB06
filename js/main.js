@@ -1,15 +1,3 @@
-jq.ajax({
-    type: "HEAD",
-    url: window.location.href,
-    complete: function(data){
-        if(data.status >= 400){
-            console.log(data.status);
-            document.cookie = "CODE="+data.status;
-            window.location.href = "error.php";
-        }
-    }
-});
-
 // REGEX VALIDATION
 function emailValid(email)
 {
@@ -184,6 +172,18 @@ function startSession() {
 
 // EFFECTS
 document.observe("dom:loaded",function(){ 
+   /* 
+    jq.ajax({
+        type: "HEAD",
+        url: window.location.href,
+        complete: function(data){
+            if(data.status >= 400){
+                console.log(data.status);
+                document.cookie = "CODE="+data.status;
+                window.location.href = "error.php";
+            }
+        }
+    });*/
     
     jq(".hnav-list-wrapper").hide();
     

@@ -2,17 +2,18 @@
     
     include('UtilsDB.php');
     include('UtilsForm.php');
+    include('session.php');
 
     $depCountry = UtilsForm::getGetParam('departure-country');
     $depDate = UtilsForm::getGetParam('departure-date');
     $arrCountry = UtilsForm::getGetParam('arrival-country');
     $arrDate = UtilsForm::getGetParam('arrival-date');
 
-    if(!$depCountry and !$depDate and !$arrCountry and !$arrDate){
+    $paramsOK = !(!isset($depCountry) and !isset($depDate) and !isset($arrCountry)  and !isset($arrDate));
+
+    if(!$paramsOK){
         header("HTTP/1.1 400 Bad Request");
     }
-
-    include('session.php');
 
     $className = 'results';
     include('header.php');
