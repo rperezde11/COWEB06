@@ -40,6 +40,10 @@ document.observe("dom:loaded",function(){
         }
     });
     
+    jq('.prom-video').click(function(){
+        jq(this).remove();
+    });
+    
     jq('.slider-prices').slider({
         range: true, 
         min: 0,

@@ -78,5 +78,11 @@
                 </div>
                 
             </div>
+            <div class="prom-video">
+                <video width="100%" height="100%" autoplay>
+                    <source src="videos/plane-takeoff.mp4" type="video/mp4">
+                    <p>Your browser does not support HTML5</p>
+                </video>
+            </div>
 
 <?php include('footer.php'); ?>
